@@ -1,25 +1,26 @@
-title:            Site Title
-tagline:          A short tagline
+title:            Alaux.net
+tagline:          A passionate's blog
 description:      Describe your website.
 # Your site's domain goes here. Leave localhost server or blank when working locally.
 url:              http://localhost:4000
 
 # Owner/author information
 owner:
-  name:           Your Name
-  avatar:         bio-photo.jpg
-  bio:            "Describe your self."
-  email:          your@email.com
+  name:           Guillaume ALAUX
+  avatar:         bio-photo.png
+  bio:            "Merely just IT stuff…"
+  email:          guillaume.alaux.net
   # Social networking links are used in author-bio sidebar. Update and remove as you like.
   twitter:        
   facebook:       
-  github:         
-  linkedin:       
+  github:         https://github.com/galaux
+  linkedin:       http://www.linkedin.com/profile/view?id=4804653
   instagram:      
   lastfm:         
   tumblr:         
   # For Google Authorship https://plus.google.com/authorship
   google_plus:    
+  stackexchange:  https://stackexchange.com/users/3173303/galaux
 
 # Analytics and webmaster tools stuff goes here
 google_analytics:   
@@ -41,7 +42,7 @@ links:
     external: true
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:    America/New_York
+timezone:    Europe/Paris
 future:      true
 pygments:    true
 markdown:    kramdown
