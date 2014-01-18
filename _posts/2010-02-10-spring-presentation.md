@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Spring : présentation
+title: Spring - présentation
 description: ""
 category: articles
 tags: [java,development]

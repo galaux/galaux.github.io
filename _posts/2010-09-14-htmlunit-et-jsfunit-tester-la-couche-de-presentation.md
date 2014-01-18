@@ -1,6 +1,6 @@
 ---
 layout: post
-title: HTMLUnit et JSFUnit : tester la couche de présentation
+title: HTMLUnit et JSFUnit - tester la couche de présentation
 description: ""
 category: articles
 tags: [java,tests,development]

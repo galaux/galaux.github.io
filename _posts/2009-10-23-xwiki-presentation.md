@@ -1,6 +1,6 @@
 ---
 layout: post
-title: XWiki : présentation
+title: XWiki - présentation
 description: ""
 category: articles
 tags: [java]

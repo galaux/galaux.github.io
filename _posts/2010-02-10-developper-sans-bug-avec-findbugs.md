@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Développer sans bug" avec FindBugs?
+title: Développer sans bug avec FindBugs?
 description: ""
 category: articles
 tags: [java,tests,development]

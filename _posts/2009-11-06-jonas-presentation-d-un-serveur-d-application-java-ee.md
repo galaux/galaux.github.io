@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jonas : présentation d'un serveur d'application Java EE
+title: Jonas - présentation d'un serveur d'application Java EE
 description: ""
 category: articles
 tags: [java,server]

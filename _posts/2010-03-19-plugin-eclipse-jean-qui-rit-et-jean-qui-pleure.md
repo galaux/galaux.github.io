@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Plugin Eclipse : Jean qui rit et Jean qui pleure?
+title: Plugin Eclipse - Jean qui rit et Jean qui pleure?
 description: ""
 category: articles
 tags: [java,development]

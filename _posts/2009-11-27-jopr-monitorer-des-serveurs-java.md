@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Jopr : monitorer des serveurs Java
+title: Jopr - monitorer des serveurs Java
 description: ""
 category: articles
 tags: [java,administration]

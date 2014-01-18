@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Glassfish : serveur d'application Java EE
+title: Glassfish - serveur d'application Java EE
 description: ""
 category: articles
 tags: [java,server]

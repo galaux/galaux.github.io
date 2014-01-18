@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Terrastore : stockage No-SQL pour application web
+title: Terrastore - stockage No-SQL pour application web
 description: ""
 category: articles
 tags: [database,java,development]
