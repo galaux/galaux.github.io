@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[Administrer des applications Java avec JASMINe]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p><img class="alignright size-full wp-image-1460" src="http://08000linux.com/blogs/files/2009/11/jasmine.png" alt="jasmine" width="100" height="22" />L'<a href="http://www.ow2.org/">OW2 Consortium</a> fait déjà beaucoup parler de lui avec <a href="http://wiki.jonas.ow2.org/xwiki/bin/view/Main/WebHome">JOnAS</a>, son serveur d'application Java Open Source. Mais comme nous l'avons dit dans <a href="http://08000linux.com/blogs/blog/2009/11/06/jonas-lautre-serveur-dapplication-java-au-nom-aquatique/">un article précédent</a>, il y a beaucoup plus qu'un seul projet dans le sac de ce consortium décidément bien inspiré !</p>
+
+<p>Voici donc <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/WebHome">JASMINe</a>, un outil dédié à l'administration de cluster JavaEE et de plateformes d'architectures orientées services (SOA). Le constat de base de ses concepteurs est simple : les architectures JavaEE modernes sont toujours plus compliquées. Il devient facile de se perdre dans les fichiers de configuration des différents composants et ceci n'est évidemment pas arrangé par l'utilisation de clusters. Il est donc temps de sortir la tête du guidon et de rechercher une vision plus élevée de l'architecture, avec une interface graphique par exemple. C'est exactement ce que cet outil propose de faciliter à travers sa conception modulaire.</p>
+
+<p><a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Design">JASMINe Design</a> est l'application qui propose l'interface graphique de conception et configuration d'architectures middleware. Une fois installée, de simples clics permettent de créer des architectures et de les voir vivre sous nos yeux. Si les serveurs sont déjà déployés il est possible de créer ces schémas et de les rattacher à l'existant. On peut aussi voir dans le <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Roadmap">roadmap</a> une fonctionnalité de découverte de l'architecture qui devrait être très appréciable.
+<a href="http://08000linux.com/blogs/files/2009/11/JASMINe-cluster-JOnAS1.png"><img class="size-full wp-image-1466 alignright" src="http://08000linux.com/blogs/files/2009/11/JASMINe-cluster-JOnAS1.png" alt="JASMINe-cluster-JOnAS" width="100%" /></a></p>
+
+<p>Une fois la topologie d'une architecture créée, rien de plus facile que de la mettre en œuvre grâce à <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Deploy">JASMINe Deploy</a>. <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Deploy#jadort">JaDOrT</a> (<em>JASMINe Deployment Orchestration Tool</em>) est le module qui permet le déploiement, la maintenance des JOnAS, <a href="https://glassfish.dev.java.net/">Glassfish</a> et autres mais aussi des machines virtuelles. Pour ceux qui sont attachés à la ligne de commande, <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Deploy#deployme">DeployME</a> est l'interlocuteur idéal pour déployer le produit de notre travail avec le GUI JASMINe Design. <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Deploy#jade">Jade</a> est quant à lui un projet plus poussé dont le but est de fournir des fonctionnalités d'auto-gestion des applications. Même si on sort sans doute ici du cadre de la production, le travail vaut la peine d'être cité.
+<a href="http://08000linux.com/blogs/files/2009/11/JaDOrT-upload1.png"><img class="size-full wp-image-1469 alignleft" src="http://08000linux.com/blogs/files/2009/11/JaDOrT-upload1.png" alt="JaDOrT-upload" width="100%" /></a></p>
+
+<p>La gestion de la supervision des architectures ainsi créées est dévolue à <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Monitoring">JASMINe Monitoring</a> via les habituelles console JMX, console web etc.</p>
+
+<p>Le <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/#modules">site officiel de JASMINe</a> permet de connaître la liste des composants middleware ainsi que les versions supportées par les différents modules. Je ne peux ensuite que vous conseiller les <a href="http://wiki.jasmine.ow2.org/xwiki/bin/view/Main/Demos">screencasts de démonstration des fonctionnalités</a> qui sont le meilleur moyen pour se faire une idée plus précise des possibilités de cet outil très prometteur.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,administration]]></tags>
+</document>

@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[Neo4j, un SGBD en graphe pour Java]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p>Le NoSQL, ce mouvement qui plaide pour un relâchement de certaines règles sur le stockage des données, a le vent en poupe. Son nom évocateur se veut en opposition avec les principes de stockage en base de données SQL, très répandu et régis par des règles de stockage très strictes. Il est le sujet de beaucoup d'articles sur internet et on le retrouve dans les projets de géants du web comme <a href="http://cassandra.apache.org/">Facebook</a> et <a href="http://github.com/traviscrawford/scribe">Twitter</a>. Dans la lignée du NoSQL, <a href="http://neo4j.org/">Neo4j</a> propose l'idée originale de stocker des données sous la forme d'un graphe.</p>
+
+<p>Fini donc les tables et les colonnes des bases de données relationnelles: Neo4j est une SGBD embarqué pour Java qui se repose sur des graphes. Comprendre par là des <a href="http://fr.wikipedia.org/wiki/Th%C3%A9orie_des_graphes">graphes mathématiques</a> faits de noeuds, de relations nommées entre ces nœuds, à l'exception que les nœuds deviennent des objets de la vie réelle avec leurs propriétés. Les relations entre ces objets sont conservées et peuvent de fait porter un nom. Dans l'exemple suivant, les développeurs de Neo4j recrééent le réseau des personnages du film Matrix :
+<code>NeoService neo = ... // Utilisation d'une factory<br />
+// Création de Thomas Anderson<br />
+Node mrAnderson = neo.createNode();<br />
+mrAnderson.setProperty( "name", "Thomas Anderson" );<br />
+mrAnderson.setProperty( "age", 29 );<br />
+<br />
+// Création de Morpheus<br />
+Node morpheus = neo.createNode();<br />
+morpheus.setProperty( "name", "Morpheus" );<br />
+morpheus.setProperty( "rank", "Captain" );<br />
+morpheus.setProperty( "occupation", "Total bad ass" );<br />
+<br />
+// Création de la relation<br />
+// afin de représenter le lien entre ces personnages<br />
+mrAnderson.createRelationshipTo( morpheus, RelTypes.KNOWS );<br />
+// Traduction : "mrAnderson KNOWS morpheus"</code>
+On retrouve cette relation, ainsi que d'autres, dans le graphe suivant :
+<a href="http://08000linux.com/blogs/files/2010/05/graphe.png"><img class="aligncenter size-full wp-image-2792" src="http://08000linux.com/blogs/files/2010/05/graphe.png" alt="graphe" width="100%" /></a></p>
+
+<p>L'utilisation des données que le code précédent a créé est assez triviale ; par exemple pour retrouver les amis de "Mr Anderson" :
+<code>// Instantiation d'un mécanisme de parcours (traverser)<br />
+// qui retourne les amis de mrAnderson<br />
+Traverser friendsTraverser = mrAnderson.traverse(<br />
+   // recherche en largeur d'abord<br />
+   Traverser.Order.BREADTH_FIRST,<br />
+   StopEvaluator.END_OF_NETWORK,<br />
+   // ne pas retrourner mrAnderson<br />
+   ReturnableEvaluator.ALL_BUT_START_NODE,<br />
+   RelTypes.KNOWS,<br />
+   Direction.OUTGOING );<br />
+
+// Utilisation de ce mécanisme de parcours<br />
+// pour afficher le résultat<br />
+System.out.println( "Mr Anderson's friends:" );<br />
+for ( Node friend : friendsTraverser )<br />
+{<br />
+   System.out.printf( "At depth %d =&gt; %s%n",<br />
+       friendsTraverser.currentPosition().getDepth(),<br />
+       friend.getProperty( "name" ) );<br />
+}</code>
+L'originalité de cette conception en graphe est de stocker les objets et leurs relations tels qu'ils existent dans les cas réels.</p>
+
+<p>Le projet Neo4j n'est pas nouveau : depuis 10 ans déjà, cette implémentation de la base de données en graphes propose ses services et s'enorgueillit d'être utilisé en environnements de production depuis 7 ans. Les capacités annoncées n'ont pas à pâlir devant un SGBD relationnel : ses développeurs annoncent de bonnes qualités de scalabilité et de performances ainsi que la capacité à stocker jusqu'à plusieurs milliards de noeuds!</p>
+
+<p>C'est un point de vue original sur le stockage de données que proposent les SGBD objets comme Neo4j. À l'heure où les SGBD <em>leaders</em> du marché se basent tous sur le modèle relationnel, voilà une solution qui prend le contrepied de la tendance. Un grand bravo donc à ces projet originaux comme <a href="http://www.db4o.com/">db4o</a>, <a href="http://www.zodb.org/">Zope Object Database</a> et Neo4J qui semble bien détenir une réponse efficace au problème du stockage de données objets.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[development,database,java]]></tags>
+</document>

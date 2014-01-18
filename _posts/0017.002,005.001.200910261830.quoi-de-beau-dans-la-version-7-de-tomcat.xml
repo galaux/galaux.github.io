@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[Quoi de beau dans la version 7 de Tomcat?]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p>La fondation Apache travaille toujours sur son serveur d'applications Tomcat et nous pouvons voir transpirer sur le <a href="http://wiki.apache.org/tomcat/TomcatVersions">site de la fondation</a> certaines informations sur la prochaine version. Voyons donc quels sont les points qui seront au menu de Tomcat 7 décris pour l'instant comme <em>preview</em>.</p>
+
+<p><strong>Quoi de neuf?</strong><br />
+Tomcat 7 <em>preview</em> apportera certaines nouveautés comme par exemple la communication en cluster via UDP, le remplacement du mécanismes des Valve par des filtres et l'amélioration du support JMX. Passons sur les <a href="http://svn.eu.apache.org/repos/asf/tomcat/trunk/webapps/docs/changelog.xmlhttp://">nettoyages de code et corrections de bugs</a> habituels dans une version majeure pour arriver au coeur du sujet : les version des composants supportés. La nouvelle version Tomcat devra s'accompagner d'un JDK 6 ou supérieur. Elle implémentera la spécification 2.1 des JSP mais surtout comme nous allons le voir plus en détails, la spécification 3.0 des Servlet.</p>
+
+<p><strong>Servlet 3.0</strong><br />
+Parmi les nombreuses améliorations apportées par l'implémentation de la spécification Servlet 3.0, on trouvera le traitement asynchrone des tâches. Ceci a pour but de séparer les traitements induits par le container de ceux résultants d'objets ServletRequest/ServletReponse. Attention toutefois le but d'un tel système n'est pas d'éviter l'interbloquage des entrées/sorties de servlet. De façon pratique, la possibilité de traiter des tâches de façon asynchrone apportera la possibilité de rediriger une requête vers une URL, assigner une tâche à un processus pour exécution ou encore informer un container de la complétion d'une tâche.
+<code>@WebFilter(asyncSupported=true)<br />
+public class MyFilter {<br />
+}<br />
+@WebServlet(asyncSupported=true)<br />
+public class MyServlet {<br />
+}service(Request req, Response res) {<br />
+    AsyncContext actx = req.startAsync();<br />
+    Runnable runnable = new Runnable() {<br />
+        public void run() {<br />
+            Message m = jmsTemplate.receive();<br />
+            res.write(m);<br />
+            req.complete();<br />
+        }<br />
+    };    executor.submit(runnable);<br />
+}</code></p>
+
+<p>La configuration dynamique est une nouveauté de cette version de Tomcat. Comme son nom l'indique, cette nouvelle capacité de Tomcat permettra d'ajouter à <em>run-time</em> des servlets ou des filtres. Cette opération ne pourra être faite qu'à l'initialisation du contexte de la servlet (ServletContextListener.contextInitialized()) comme montré dans l'exemple suivant.
+<code>interface Servlet/Filter-Registration{<br />
+    setDescription(String);<br />
+    setInitParameter(String name,Object value);<br />
+    setInitParameters(Map p);<br />
+    setAsyncSupported(boolean supported);<br />
+    addMappingForUrlPatterns(...);<br />
+}</code></p>
+
+<p>Qui n'a pas rêvé de fractionner la configuration générale de votre serveur Tomcat en plusieurs fichiers? On sera servi avec cette version 7 <em>preview</em> car elle ajoute une fonctionnalité de Web Fragments. Il sera possible, par exemple, d'inclure dans les JARs appropriés une configuration spécifique.</p>
+
+<p>Certaines annotations ont été rajoutées afin de simplifier la déclaration d'instances ou de classes. Leurs noms parle d'eux-même :
+<code>
+@WebServlet (must extend HttpServlet)<br />
+@WebFilter (must implement Filter)<br />
+@WebInitParam (both servlets/filters)<br />
+@WebListener<br />
+    - ServletContextListener<br />
+    - HttpSessionListener<br />
+    - ServletRequestListener
+</code>
+</p>
+
+<p>Une nouvelle option <em>run-time</em> fait son apparition dans Tomcat 7 <em>preview</em> : l'authentification "programmatique" d'utilisateur via les méthodes suivantes :
+<code>login(HttpServletResponse resp);<br />
+login(String username, String password);</code>
+Dernière nouveauté qu'on mentionnera ici, la configuration des cookies de sessions apportera la possibilité de modifier certain paramètres de cookies de session via les méthodes de l'interface SessionCookieConfig.
+<code>interface javax.servlet.SessionCookieConfig {<br />
+    setName(String name);<br />
+    setSecure(boolean isSecure);<br />
+    setHttpOnly(boolean isHttpOnly);<br />
+    setPath(String path);<br />
+    setDomain(String domain);<br />
+    setComment(String comment);<br />
+}</code></p>
+
+<p>On peut se référer à <a href="http://svn.apache.org/repos/asf/tomcat/trunk/TOMCAT-7-RELEASE-PLAN.txt">ce document</a> de la fondation Apache qui décrit l'état des développements vers l'implémentation complète de la spécification Servlet 3.0. Gageons que la prochaine version de la <a href="http://www.us.apachecon.com/c/acus2009/schedule#tomcat">conférence Apache ApacheCon</a> lèvera d'autres pans du voile sur les fonctionnalités de ce futur Tomcat 7.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,server]]></tags>
+</document>

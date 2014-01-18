@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[Dios Mio, écorché d'une webapp]]></title>
+	<allow_com>1</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p><em>This article in french is the first of a serie I intend to write about a web application I am currently developping for training purpose. The english version of the articles should come up later. In the meantime you can still have a look at <a href="https://github.com/galaux/diosmio">the source code of the application</a>.</em></p>
+
+<p><a href="https://github.com/galaux/diosmio"><em>Dios Mio</em></a> est une application web Java EE test qui me sert de laboratoire pour mettre en pratique différents frameworks, API, concepts d'architecture. Elle est en perpétuelle évolution/remodelage et n'est donc pas utilisable en l'état. L'application ainsi que cette série d'articles sont publiés dans le but de partager l'expérience acquise lors de la résolution de certains problèmes d'architecture qui n'ont évidemment pas manqué de se poser.</p>
+
+<p>Dios Mio propose la gestion d'entités <em>Artifact</em> que l'on peut voir comme le fil conducteur de l'application.</p>
+
+<p>Cet article est une présentation générale de l'application. Il introduira aussi certains points d'architecture sensibles qui seront développés par la suite dans d'autres articles pour constituer une sorte d'écorché d'une application web. Ces articles sont agrémentés de morceaux de code et/ou de liens vers les classes Java complètes. Vous pouvez en effet retrouver <a href="https://github.com/galaux/diosmio">l'intégralité du code source de Dios Mio</a> sur <a href="https://github.com">Github</a>.</p>
+
+<h3>Architecture générale</h3>
+<p>Dios Mio est une webapp <a href="https://developers.google.com/web-toolkit/">GWT</a> <a href="http://www.springsource.org/">Spring</a>. Son coeur est constitué d'une couche service qui à son tour repose sur une couche <a href="http://fr.wikipedia.org/wiki/Objet_d'acc%C3%A8s_aux_donn%C3%A9es">DAO</a> qui sont toutes les deux des beans Spring.</p>
+
+<pre><code>                                           Webapp
+                                 +-----------------------+
+                                 | +-------------+ +---+ |
+                                 | |     GWT     | |   | |
+                                 | +-------------+ | S | |
+                                 |        |        | P | |
+                 +-------------+ | +-------------+ | R | |
+                 |     CLI     |-|-|  Services   | | I | |
+                 +-------------+ | +-------------+ | N | |
+                                 |        |        | G | |
+                                 | +-------------+ |   | |
+                                 | |  DAO (JPA)  | |   | |
+                                 | +-------------+ +---+ |
+                                 +--------|--------------+
+                                       -------
+                                     ( BD (H2) )
+                                       -------</code></pre>
+
+<p>La couche DAO utilisait initialement <a href="http://www.hibernate.org/">Hibernate</a> et persistait les entités dans une base <a href="http://cassandra.apache.org/">Cassandra</a>. Cependant afin de conserver la possibilité d'utiliser une autre implémentation, Hibernate a été remplacé par du pur <a href="http://fr.wikipedia.org/wiki/Java_Persistence_API">JPA</a>. De même l'implémentation est maintenant <a href="http://openjpa.apache.org/">OpenJPA</a> et la base de donnée utilisée est <a href="http://www.h2database.com/html/main.html">H2</a> qui apporte la facilité de ne pas avoir à lancer de base avant de démarrer l'application.</p>
+
+<p>La rôle de partie présentation est tenu par une application web GWT qui est aussi le "point d'entrée" Spring (L'intégration des beans Spring dans la partie GWT fera l'objet d'un article). C'est donc cette application GWT qui via Spring, déclare les beans que sont la couche service et la couche DAO. Ce rôle de partie présentation pourrait être tenu par n'importe quel autre type de webapp grâce à l'utilisation de Spring.</p>
+
+<p>Dios Mio comporte aussi un accès en ligne de commande (CLI). C'est un simple JAR qui propose un mode connecté à la webapp via <a href="http://fr.wikipedia.org/wiki/RMI_(java)">RMI</a>. Ce CLI comporte aussi l'ébauche de communication à distance avec la webapp par l'intermédiaire d'appels <a href="http://fr.wikipedia.org/wiki/Remote_procedure_call">RPC</a> sérialisés par <a href="http://code.google.com/p/protobuf/">Google Protocol Buffers</a> et/ou <a href="http://thrift.apache.org/">Apache Thrift</a>. Cette partie n'est pas achevée par manque d'intérêt mais ne nécessiterait pas de gros développement pour disposer d'appels distants à l'application.</p>
+
+<p>Ce CLI propose une invite de commande avec auto-complétion des commandes saisies par l'utilisateur via <a href="http://jline.sourceforge.net/">jline</a>. Celles-ci sont parsées pour vérifier que leur syntaxe est conforme au dialecte attendu grâce à <a href="http://www.antlr.org/">ANTLR</a>. Ceci sera détaillé dans un article à venir.</p>
+
+<p>Dernier point intéressant : <tt>KissLogger</tt>, un logger très simple (<a href="http://fr.wikipedia.org/wiki/Principe_KISS">K</a><a href="http://fr.wikipedia.org/wiki/Kiss">I</a><a href="http://fr.wikipedia.org/wiki/Principe_KISS">SS</a>) pour applications Java lourde (côté CLI donc). Il apporte les avantages suivants :
+<ul>
+  <li>ne pas avoir à ajouter de dépendance à un framework de log</li>
+  <li>léger (1 classe)</li>
+  <li>très simple d'emploi</li>
+  <li>permet de logger temporairement dans un buffer lors du lancement de l'appli puis de rediriger le buffer vers une sortie finale. Voir l'article qui y sera consacré.</li>
+</ul>
+</p>
+
+<p>Le tout est assemblé par <a href="http://maven.apache.org/">Maven</a> y compris la partie GWT que l'on peut donc lancer via Maven. Un article traitera de la création du projet Maven GWT, de son import sous <a href="http://www.eclipse.org/">Eclipse</a> ainsi que de la configuration nécessaire pour lancer et debugger l'application sous Maven et sous Eclipse.</p>
+
+<p>Remarque: Dios Mio étant un projet test et non une application à but de production, je ne me suis pas attardé sur les tests unitaires. C'est une pratique que je ne m'autorise pas sur des projets professionnels.</p>
+
+<h3>Les modules Maven</h3>
+<p>Dios Mio est compilée/assemblée par Maven et développée initialement sous <a href="http://www.jetbrains.com/idea/">IntelliJ</a> mais à cause de besoins GWT, le développement se poursuit sous Eclipse.<p>
+
+<p>L'application se décompose en quatre modules Maven plus un module web de test :
+<ul>
+  <li><tt>diosmio-services</tt> :<br />
+	Contient les DAO ainsi que les services de plus haut niveau. Tous sont injectables via Spring.</li>
+  <li><tt>diosmio-com</tt> :<br />
+	Contient les entités annotées JPA utilisées dans diosmio-services ainsi que les classes de communication externes Thrift et/ou Protobuf (ébauches).</li>
+  <li><tt>diosmio-gwt</tt> :<br />
+	Contient l'application web GWT et déclare les beans Spring services, DAO et RMI Exporter qu'elle utilise ainsi que tous les autres beans utilisés dans l'application.</li>
+  <li><tt>diosmio-cli</tt> :<br />
+	Contient le code de la CLI avec son connecteur RMI.</li>
+  <li><tt>diosmio-web</tt> :<br />
+	Contient l'application web sans JSP dont le but était d'instancier les beans Spring quand la partie GWT n'existait pas encore.</li>
+</ul>
+</p>
+
+<p>Tout point de vue ou question sur cette application sont les bienvenus. Ce n'est peut-être pas la meilleure implémentation, c'en est juste une parmi d'autres. Si vous pensez qu'une autre solution pour tel ou tel point d'architecture aurait été plus judicieuse, n'hésitez pas à laisser un commentaire. Enfin si vous pensez que vous pourriez avoir besoin de mes compétences dans votre équipe, mon CV se trouve en haut de cette page ;).</p>]]></content>
+	<tags><![CDATA[java,development,spring,jpa]]></tags>
+	<meta_description><![CDATA[]]></meta_description>
+	<meta_keywords><![CDATA[]]></meta_keywords>
+	<title_htmltag><![CDATA[]]></title_htmltag>
+</document>

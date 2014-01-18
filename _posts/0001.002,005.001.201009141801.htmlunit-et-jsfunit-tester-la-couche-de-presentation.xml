@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[HTMLUnit et JSFUnit : tester la couche de présentation]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p><a href="http://htmlunit.sourceforge.net/">HTMLUnit</a> est une extension de <a href="http://www.junit.org/">JUnit</a> qui propose de tester une application <em>live</em>, c'est à dire en permettant au développeur d'exécuter des tests d'application de bout en bout. Ce <em>framework</em> se décrit comme un navigateur web sans interface puisqu'il offre la possibilité d'appeler les éléments HTML de pages et ainsi de simuler une navigation. Le développeur peut donc remplir des formulaires, cocher des <em>checkbox</em>, renseigner des champs et ensuite simuler un clic sur un bouton, un lien ou valider un formulaire.</p>
+
+<p>HTMLUnit peut être directement utilisé comme une extension de JUnit. Pour ce faire, il suffit d'inclure les JARs nécessaires dans le CLASSPATH pour avoir accès aux fonctionnalités de test web. Ci-après un exemple dans lequel on retrouve l'annotation <code>@Test</code> qui témoigne de l'utilisation de JUnit. Celui-ci invoque une page via la classe WebClient et en vérifie le nom ainsi que certains éléments constitutifs.</p>
+
+<code>@Test<br />
+public void homePage() throws Exception {<br />
+  final WebClient webClient = new WebClient();<br />
+  final HtmlPage page =<br />
+    webClient.getPage("http://htmlunit.sourceforge.net");<br />
+  assertEquals("Welcome", page.getTitleText());<br />
+<br />
+  final String pageAsXml = page.asXml();<br />
+  assertTrue(pageAsXml.contains(""));<br />
+<br />
+  final String pageAsText = page.asText();<br />
+  assertTrue(pageAsText.contains("Support for HTTP(S)"));
+}</code>
+
+<p>À la vue de cet exemple, on comprend les possibilités d'un tel outil : test de disponibilité, test de présence de certains éléments (techniques ou fonctionnels) mais aussi vérification du caractère bien formé d'une page HTML/XML. HTMLUnit pousse la technique jusqu'à simuler un navigateur spécifique. Cette possibilité n'est pas superflue quand on connait le respect très variable de la norme HTML des différents navigateurs du marché.</p>
+
+<p>Le parti pris de HTMLUnit de traiter avec la partie présentation est intéressant car il teste la pile complète de l'application et cela au plus près du résultat visible par l'utilisateur. Cela implique cependant que l'application complète soit démarrée et disponible pour être testée, ce qui peut s'avérer lourd à prendre en charge.<br />
+Le <em>framework</em> offre beaucoup de possibilités de tests mais attention à ne pas se perdre à tester trop d'éléments HTML inutiles. Écrire les tests de pages HTML avec ce type d'outil reste fastidieux. Pour y pallier, il existe des outils de plus haut niveau comme <a href="http://jwebunit.sourceforge.net/">JWebUnit</a>, <a href="http://code.google.com/p/selenium/?redir=1">WebDriver</a> ou <a href="http://www.jboss.org/jsfunit">JSFUnit</a> (voir la suite) qui s'appuient justement sur HTMLUnit.</p>
+
+
+<p><a href="http://www.jboss.org/jsfunit">JSFUnit</a> quant à lui est le concept de test de la partie présentation telle que vue par HTMLUnit (vu au paragraphe précédent) appliqué à JSF.<br />
+Les tests JSFUnit sont - comme tous les tests JUnits – des méthodes d'une classe Java. Dans le cas particulier de JSFUnit, il est nécessaire que cette classe hérite de ServletTestCase afin de lui faire prendre en compte la spécificité Servlet de JSF. Une fois les JARs de JSFUnit intégrés au CLASSPATH, il est possible d'utiliser les classes du <em>framework</em> et ainsi de tester les Managed Beans, la navigation de page en page, les composants visuels, les résultats de sortie ainsi que la configuration de l'application. L'exemple suivant du site officiel montre le test de la page de présentation d'une application :</p>
+
+<code>public class JSFUnitTest extends ServletTestCase<br />
+{<br />
+  public static Test suite()<br />
+  {<br />
+    return new TestSuite(JSFUnitTest.class);<br />
+  }<br />
+<br />
+  public void testInitialPage() throws IOException<br />
+  {<br />
+    // Send an HTTP request for the initial page<br />
+    JSFSession jsfSession = new JSFSession("/index.faces");<br />
+<br />
+    // A JSFClientSession emulates the browser<br />
+    // and lets you test HTML<br />
+    JSFClientSession client = jsfSession.getJSFClientSession();<br />
+<br />
+    // A JSFServerSession gives you access to JSF<br />
+    JSFServerSession server = jsfSession.getJSFServerSession();<br />
+<br />
+    // Test navigation to initial viewID<br />
+    assertEquals("/index.jsp", server.getCurrentViewID());<br />
+<br />
+    // Assert that the prompt component<br />
+    // is in the component tree and rendered<br />
+    UIComponent prompt = server.findComponent("greeting");<br />
+    assertTrue(prompt.isRendered());<br />
+<br />
+    // Test a managed bean<br />
+    assertEquals("Stan",<br />
+                 server.getManagedBeanValue("#{foo.text}")<br />
+                 );<br />
+  }<br />
+}</code>
+
+<p>Afin de pouvoir lancer ces tests, il est nécessaire d'inclure dans le fichier web.xml les lignes suivantes :</p>
+
+<code>
+&lt;filter&gt;<br />
+  &lt;filter-name&gt;<br />
+    JSFUnitFilter<br />
+  &lt;/filter-name&gt;<br />
+  &lt;filter-class&gt;<br />
+    org.jboss.jsfunit.framework.JSFUnitFilter<br />
+  &lt;/filter-class&gt;<br />
+&lt;/filter&gt;<br />
+<br />
+&lt;filter-mapping&gt;<br />
+  &lt;filter-name&gt;<br />
+    JSFUnitFilter<br />
+  &lt;/filter-name&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletTestRunner<br />
+  &lt;/servlet-name&gt;<br />
+&lt;/filter-mapping&gt;<br />
+<br />
+&lt;filter-mapping&gt;<br />
+  &lt;filter-name&gt;<br />
+    JSFUnitFilter<br />
+  &lt;/filter-name&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletRedirector<br />
+  &lt;/servlet-name&gt;<br />
+&lt;/filter-mapping&gt;<br />
+<br />
+&lt;servlet&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletRedirector<br />
+  &lt;/servlet-name&gt;<br />
+  &lt;servlet-class&gt;<br />
+    org.jboss.jsfunit.framework.JSFUnitServletRedirector<br />
+  &lt;/servlet-class&gt;<br />
+&lt;/servlet&gt;<br />
+<br />
+&lt;servlet&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletTestRunner<br />
+  &lt;/servlet-name&gt;<br />
+  &lt;servlet-class&gt;<br />
+    org.apache.cactus.server.runner.ServletTestRunner<br />
+  &lt;/servlet-class&gt;<br />
+&lt;/servlet&gt;<br />
+<br />
+&lt;servlet-mapping&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletRedirector<br />
+  &lt;/servlet-name&gt;<br />
+  &lt;url-pattern&gt;<br />
+    ServletRedirector<br />
+  &lt;/url-pattern&gt;<br />
+&lt;/servlet-mapping&gt;<br />
+<br />
+&lt;servlet-mapping&gt;<br />
+  &lt;servlet-name&gt;<br />
+    ServletTestRunner<br />
+  &lt;/servlet-name&gt;<br />
+  &lt;url-pattern&gt;<br />
+    ServletTestRunner<br />
+  &lt;/url-pattern&gt;<br />
+&lt;/servlet-mapping&gt;
+</code>
+
+<p>Une fois l'application déployée, il est possible de lancer les test via une page de celle-ci. Le site officiel donne un exemple en utilisant un rapport <a href="http://jakarta.apache.org/cactus/integration/integration_browser.html">Cactus</a> :</p>
+<a href="http://08000linux.com/blogs/files/2010/09/servlettestrunner_html.jpeg"><img class="aligncenter size-full wp-image-2882" src="http://08000linux.com/blogs/files/2010/09/servlettestrunner_html.jpeg" alt="servlettestrunner_html" width="100%" /></a>
+
+<p>De même que HTMLUnit, l'avantage de ce genre de <em>framework</em> est de tester et d'utiliser l'application de bout en bout. On ne teste plus de petites parties mais bien l'application dans sa totalité. Cette aspect a les défauts de ses qualités : il est nécessaire de conserver une application complète démarrée pour pouvoir effectuer les tests.</p>
+
+<p>Les possibilités de tests sont de plus nombreuses. Ce qui peut paraître ici comme un avantage peut aussi constituer un inconvénient au développeur : il peut se retrouver perdu au milieu de pages Jsp qu'il serait tenté de tester dans leur intégralité. En cas d'adoption d'un tel outil, il est donc nécessaire de borner les tests à certains éléments précis, au risque de voir les développeurs se perdre dans des lignes de code de tests inutiles.</p>
+
+<p>JSFUnit étant une extension de HTMLUnit pour JSF, il sera plus adapté pour tester les applications JSF.</p>
+
+<em>Article publié sur <a href="http://linuxfr.org/~galaux">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em>]]></content>
+	<tags><![CDATA[java,tests,development]]></tags>
+</document>

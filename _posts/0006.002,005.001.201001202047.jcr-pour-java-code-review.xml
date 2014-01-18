@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[JCR pour Java Code Review]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p>La revue de code n'est pas une discipline du développement qui évolue sous les feux de la rampe. Souvent sacrifiée sur l'autel de la précipitation, oubliée dans l'ombre d'actions considérées comme plus prioritaires, la revue de code reste cependant une bonne pratique pour maîtriser la qualité des développements au sein de son/ses équipe(s). <a href="http://jcodereview.sourceforge.net/">Java Code Review</a> propose ses services simples mais efficaces : présenter les derniers <em>commits</em>, surligner les modifications, compter le nombre de relectures des modifications etc.</p>
+
+<p>JCR est codé en Python et utilise une base de données pour stocker les différents éléments des projets en cours de revue. L'architecture technique de JCR repose sur le concept de l'application web consultable par les différents acteurs d'un projet de revue de code.</p>
+
+<p>Côté utilisateur, JCR propose différents rôles:
+<ul>
+	<li> Un administrateur</li>
+	<li>Des <em>project owners</em></li>
+	<li>Des <em>reviewers</em></li>
+</ul>
+La tâche de gestion des accès aux dépôts SVN est dévolue à l'administrateur, qui a aussi la responsabilité de créer les projets proprement dits.
+<a href="http://08000linux.com/blogs/files/2009/12/01.png"><img class="alignleft size-full wp-image-2086" src="http://08000linux.com/blogs/files/2009/12/01.png" alt="01" width="300" height="130" /></a></p>
+
+<p>Une fois cette formalité effectuée, JCR peut accéder aux modifications remontées par les développeurs. Viennent ensuite les <em>project owners</em> qui sont généralement les personnes à l'origine du code : ils soumettent leur travail à l'avis des <em>reviewers</em>.</p>
+
+<p>Ce découpage en rôles est le garant d'une utilisation aisée à grande échelle même s'il peut paraître compliqué dans un premier temps.</p>
+
+<p>Une fois ces paramétrages effectués et les rôles attribués, JCR permet de générer la liste des fichiers modifiés et la présente sous forme de différentiels colorés, ce qui assure une clarté lors de la revue de code. À chaque lecture d'un fichier modifié, un compteur s'incrémente et permet de s'assurer qu'un nombre suffisant de personnes a revu la modification. Les reviewers et les project owners ont aussi la possibilité d'échanger via un système de notes portant sur une modification du code.
+<a href="http://08000linux.com/blogs/files/2009/12/02.png"><img class="alignright size-full wp-image-2087" src="http://08000linux.com/blogs/files/2009/12/02.png" alt="02" width="300" height="123" /></a></p>
+
+<p>Pour l'instant JCR ne supporte qu'<a href="http://jcodereview.sourceforge.net/html/faq.html#why-jcr-instead-of-other-code-review-tools">un seul gestionnaire de version</a> (SVN), même si l'intégration avec d'autres gestionnaires est prévue. L'interface de JCR peut ensuite se révéler peu intuitive : créer son premier projet s'avère parfois compliqué pour le débutant du fait de l'arrangement des liens. Enfin, la documentation a tendance à être verbeuse et à perdre l'utilisateur curieux.</p>
+
+<p>Le déploiement est simple et efficace : une version <em>standalone</em> pour les plus pressés permet de goûter au produit et de jouer avec ses fonctionnalités. Une fois convaincu, une installation complète permet de passer le jouet en production et de soumettre ses propres projets sans trop d'efforts. Remarquons que JCR supporte pour cela plusieurs SGBD comme SQLite (très utile pour la version <em>standalone</em>), PostgreSQL et MySQL.</p>
+
+<p>Java Code Review est simple dans sa conception et il propose des outils efficaces de revue de code. Même si la configuration de ses premiers projets peut s'avérer déroutante, JCR reste intéressant et devrait trouver plus souvent sa place dans les environnements de développement au bénéfice de la qualité des projets informatiques.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,tests,development]]></tags>
+</document>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[systemd unit files and "environment variables"]]></title>
+	<allow_com>1</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p>I recently got stuck with a simple systemd detail about environment variables processing. They are actually handled differently from any regular bash variable we are used to deal with.</p>
+
+<p>I was trying to write the Tomcat 7 service unit for Arch Linux. Everything worked fine except for the <tt>CATALINA_OPTS</tt> variable not beeing correctly interpreted when made of multiple parameters. The usual JVM heap options <tt>-Xms512m -Xmx1024m</tt> for instance were not correctly handled: only the first parameter was passed on to Tomcat.</p>
+
+<p>This was one of my first attempt:
+	Unit file:
+<pre class="brush: php"><code>...
+[Service]
+...
+EnvironmentFile=/etc/conf.d/tomcat7
+ExecStart=/usr/share/tomcat7/bin/startup.sh ${CATALINA_OPTS}
+ExecStop=/usr/share/tomcat7/bin/shutdown.sh
+...
+</code></pre>
+
+	/etc/conf.d/tomcat7 conf file:
+<pre class="brush: php"><code>...
+CATALINA_OPTS=-Xms512m -Xmx1024m
+...</code></pre>
+</p>
+
+
+<p>This does not work because environment variables in systemd are handled differently if used with ${MYVAR} or with $MYVAR.
+	<ul>
+		<li><tt>${MYVAR}</tt> will provide the target process with a single string argument made of the complete string you specified in <tt>MYVAR</tt>.</li>
+		<li><tt>$MYVAR</tt> in the other hand will split <tt>MYVAR</tt> around spaces it contains and feed them to the process.</li>
+	</ul>
+</p>
+
+<p>I have tried many things like surrounding the <tt>CATALINA_OPTS</tt> with simple quotes, double-quotes until <a href="http://patrakov.blogspot.fr/2011/01/writing-systemd-service-files.html gave me the solution">this blog post</a>.</p>
+
+<p>So the correct unit file
+<pre class="brush: php"><code>...
+[Service]
+...
+EnvironmentFile=/etc/conf.d/tomcat7
+ExecStart=/usr/share/tomcat7/bin/startup.sh $CATALINA_OPTS
+ExecStop=/usr/share/tomcat7/bin/shutdown.sh
+...</code></pre>
+</p>
+
+<p>Have a look at <a href="https://projects.archlinux.org/svntogit/packages.git/tree/trunk/systemd.tomcat7.service?h=packages/tomcat7">the final unit file</a> and <a href="https://projects.archlinux.org/svntogit/packages.git/tree/trunk/tomcat7.conf.d?h=packages/tomcat7">the corresponding configuration file</a> for a complete example.</p>]]></content>
+	<tags><![CDATA[java,archlinux]]></tags>
+	<meta_description><![CDATA[]]></meta_description>
+	<meta_keywords><![CDATA[]]></meta_keywords>
+	<title_htmltag><![CDATA[]]></title_htmltag>
+</document>

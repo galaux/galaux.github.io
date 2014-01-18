@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[Tests unitaires avec DBUnit et Jailer]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p>Dans le domaine du développement, et particulièrement le développement Java, les outils Open Source sont très largement utilisés en entreprise. Quand il s'agit de mettre en place des tests unitaires en Java, le nom de <a href="http://www.junit.org/">JUnit</a> revient souvent. Même si quelques alternatives ont vu le jour (en particulier <a href="http://testng.org/doc/index.html">TestNG</a>), ce <em>framework</em> reste le <em>leader</em> dans son domaine.</p>
+
+<p>Pour ceux qui utilisent déjà JUnit, voici deux outils complémentaires qui en facilitent l'emploi : <a href="http://www.dbunit.org/">DBUnit</a> et <a href="http://jailer.sourceforge.net/">Jailer</a>.</p>
+
+<p><strong>DBUnit</strong><br />
+<a href="http://www.dbunit.org/">DBUnit</a> est une extension de JUnit dont la tâche principale est de gérer des jeux de données qui seront retournés comme s'ils étaient le résultat d'une requête sur la base de données. Le premier avantage est de maintenir l'indépendance du code des tests vis-à-vis de la base de données réelle. Ensuite, DBUnit garantit que tous les tests unitaires retrouveront la base de données dans le même état et non dans l'état dans lequel le test précédent a pu la laisser.</p>
+
+<p>Les jeux de données de DBUnit sont conservés sous forme XML. La première étape à son utilisation  est donc de constituer les fichiers XML qui contienent les données (On pourra se référer au paragraphe suivant qui traite d'une méthode d'automatisation de cette étape).  Voir ci-après un exemple de fichier XML de données :
+<code>&lt;!DOCTYPE dataset SYSTEM "dataset.dtd"&gt;<br />
+&lt;dataset&gt;<br />
+    &lt;table name="TEST_TABLE"&gt;<br />
+        &lt;column&gt;COL0&lt;/column&gt;<br />
+        &lt;column&gt;COL1&lt;/column&gt;<br />
+        &lt;column&gt;COL2&lt;/column&gt;<br />
+        &lt;row&gt;<br />
+            &lt;value&gt;row 0 col 0&lt;/value&gt;<br />
+            &lt;value&gt;row 0 col 1&lt;/value&gt;<br />
+            &lt;value&gt;row 0 col 2&lt;/value&gt;<br />
+        &lt;/row&gt;<br />
+        &lt;row&gt;<br />
+            &lt;null/&gt;<br />
+            &lt;value&gt;row 1 col 1&lt;/value&gt;<br />
+            &lt;null/&gt;<br />
+        &lt;/row&gt;<br />
+    &lt;/table&gt;<br />
+    &lt;table name="SECOND_TABLE"&gt;<br />
+        &lt;column&gt;COLUMN0&lt;/column&gt;<br />
+        &lt;column&gt;COLUMN1&lt;/column&gt;<br />
+        &lt;row&gt;<br />
+            &lt;value&gt;row 0 col 0&lt;/value&gt;<br />
+            &lt;value&gt;row 0 col 1&lt;/value&gt;<br />
+        &lt;/row&gt;<br />
+    &lt;/table&gt;<br />
+    &lt;table name='EMPTY_TABLE'&gt;<br />
+        &lt;column&gt;COLUMN0&lt;/column&gt;<br />
+        &lt;column&gt;COLUMN1&lt;/column&gt;<br />
+    &lt;/table&gt;<br />
+&lt;/dataset&gt;</code>
+Comme les autres <em>frameworks</em> de test, DBUnit nécessite d'inclure ses JARs dans le CLASSPATH pour accéder aux classes natives. Le codage même d'un test passe ensuite par l'habituel héritage de la classe mère (ici DBTestCase). La première action à entreprendre est d'initialiser les propriétés de la base de données que DBUnit simulera puis d'y attacher le fichier XML de données précédemment créé comme dans l'exemple suivant :
+<code>public class SampleTest extends DBTestCase<br />
+{<br />
+    public SampleTest(String name)<br />
+    {<br />
+        super( name );<br />
+        System.setProperty(<br />
+            PropertiesBasedJdbcDatabaseTester<br />
+                .DBUNIT_DRIVER_CLASS,<br />
+            "org.hsqldb.jdbcDriver");<br />
+        System.setProperty(<br />
+            PropertiesBasedJdbcDatabaseTester<br />
+                .DBUNIT_CONNECTION_URL,<br />
+            "jdbc:hsqldb:sample");<br />
+        System.setProperty(<br />
+            PropertiesBasedJdbcDatabaseTester<br />
+                .DBUNIT_USERNAME,<br />
+            "sa" );<br />
+        System.setProperty(<br />
+            PropertiesBasedJdbcDatabaseTester<br />
+                .DBUNIT_PASSWORD,<br />
+            "");<br />
+    }</code>
+</p>
+
+<code>    protected IDataSet getDataSet() throws Exception<br />
+    {<br />
+        return new FlatXmlDataSetBuilder().build(<br />
+            new FileInputStream("dataset.xml")<br />
+        );<br />
+    }<br />
+}</code>
+Outil puissant et offrant une réelle valeur ajoutée, DBUnit devrait avoir sa place dans tous les environnements de tests. L'indépendance et la stabilité qu'il induit par rapport à la couche de persistance est un réel confort et un garant d'exécution correcte des tests. La mise en place est de plus simple.
+La constitution des fichiers XML peut cependant être fastidieuse et il est conseillé d'utiliser des outils automatiques de génération tels que Jailer.</p>
+
+<p><strong>Jailer</strong><br />
+Comme on l'a vu précédemment, il est utile de s'affranchir de la partie persistance quand on teste une application afin de s'assurer du déterminisme des réponses de requêtes (et aussi pour rendre les tests moins consommateurs en ressources). De ce point de vue, des outils comme DBUnit sont des <em>mocks</em> de base de données.
+Mais écrire les jeux de données de DBUnit peut être fastidieux et il vaut mieux souvent automatiser cette tâche. Dans ce sens, <a href="http://jailer.sourceforge.net/">Jailer</a> permet d'extraire des jeux de tests DBUnit cohérents d'une base de données. La cohérence est assurée sur le plan des relations fonctionnelles des données tout en respectant les relations d'intégrité. Les sous-ensembles extraits présentent donc une « vue » pleinement utilisables par les tests et nettoyée des données superflues.</p>
+
+<p>Jailer est une application lourde qu'un développeur lance et connecte à la base de données :
+<a href="http://08000linux.com/blogs/files/2010/07/jailer_settings.png"><img class="aligncenter size-full wp-image-2830" src="http://08000linux.com/blogs/files/2010/07/jailer_settings.png" alt="jailer_settings" width="100%" /></a>
+Après quelques paramétrages optionnels de plus, Jailer permet la sélection de données choisies comme le montre la capture suivante d'une base exemple d'employés :
+<a href="http://08000linux.com/blogs/files/2010/07/jailer_export.png"><img class="aligncenter size-full wp-image-2831" src="http://08000linux.com/blogs/files/2010/07/jailer_export.png" alt="jailer_export" width="100%" /></a></p>
+
+<p>Dans la capture précédente issue du site officiel, on a demandé un export SQL mais on peut voir que l'outil permet de créer un fichier XML (au format DBUnit).</p>
+
+<p>Jailer est simple d'emploi et il permet de créer voir d'enrichir des jeux de données au fil des développements très rapidement. Le gain de temps qu'il assure au développeur est conséquent et il lui évite une tâche laborieuse et rébarbative.
+Allié à DBUnit, Jailer est l'outil parfait pour envisager des tests unitaires de façon sereine. Pas de problème de cohérence ou de déterminisme des données.</p>
+
+<p>Le binôme DBUnit-Jailer apporte la flexibilité et la rapidité de mise en place aux tests unitaires. Pas d'hésitation donc sur ces deux outils : les tests, même s'ils devraient toujours être un passage obligatoire dans un projet informatique ne sont pas une finalité. Tout processus visant à les accélérer ou les faciliter est donc bon à prendre.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,tests,development]]></tags>
+	<meta_description><![CDATA[]]></meta_description>
+	<meta_keywords><![CDATA[]]></meta_keywords>
+	<title_htmltag><![CDATA[]]></title_htmltag>
+</document>

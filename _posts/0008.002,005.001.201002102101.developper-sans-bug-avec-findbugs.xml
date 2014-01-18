@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA["Développer sans bug" avec FindBugs?]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p><img class="alignleft size-full wp-image-2292" src="http://08000linux.com/blogs/files/2010/01/buggy-sm.png" alt="buggy-sm" width="120" height="92" /><img class="alignright size-full wp-image-2293" src="http://08000linux.com/blogs/files/2010/01/informal.png" alt="informal" width="93" height="91" />Il existe nombre d'outils d'audit de code dans l'univers du développement Java qui sont autant d'armes contre les faux-pas de développement. <a href="http://findbugs.sourceforge.net/">FindBugs</a> (qui porte bien son nom...) propose de parcourir les applications java à la recherche de motifs à problèmes.</p>
+
+<p>L'outil développé par l'Université du Maryland appartient à la famille des analyseurs statiques comme <a href="http://pmd.sourceforge.net/">PMD</a> ou <a href="http://checkstyle.sourceforge.net/">CheckStyle</a>. Il ne cherche pas à observer l'application en action mais plutôt à se plonger dans son code. Cependant FindBugs se différencie au sein de cette famille par le fait que son analyse est effectuée sur le <em>bytecode</em> plutôt que sur le code source.</p>
+
+<p>Findbugs détecte une liste de <em>bugs</em> connus, sans cesse remise à jour, qui va de la simple <a href="http://findbugs.sourceforge.net/bugDescriptions.html#ES_COMPARING_STRINGS_WITH_EQ">comparaison de chaînes de caractères avec l'opérateur "="</a> jusqu'à des <a href="http://findbugs.sourceforge.net/bugDescriptions.html#ML_SYNC_ON_FIELD_TO_GUARD_CHANGING_THAT_FIELD"><em>bugs</em> en environnement <em>multi-threads</em> plus complexes</a>. Si la <a href="http://findbugs.sourceforge.net/bugDescriptions.html">liste complète des problèmes recherchés</a> ne donne pas satisfaction, FindBugs offre la possibilité de créer des <em>plugins</em> pour l'augmenter. Le <a href="http://fb-contrib.sourceforge.net/bugdescriptions.html"><em>plugin</em> fb-contrib</a> permet en particulier l'identification de nombreux cas qui n'ont pas encore trouvé le chemin de la liste officielle.</p>
+
+<p><a href="http://08000linux.com/blogs/files/2010/01/FindBugs_Eclipse1.png"><img class="aligncenter size-full wp-image-2297" src="http://08000linux.com/blogs/files/2010/01/FindBugs_Eclipse1.png" alt="FindBugs_Eclipse" width="100%" /></a></p>
+
+<p>L'Université du Maryland propose son outil sous diverses formes qui vont de l'application <em>standalone</em> jusqu'au <a href="http://fr.wikipedia.org/wiki/JNLP">JNLP</a> en-ligne en passant par le <em>plugin</em> Eclipse (via l'URL d'installation http://findbugs.cs.umd.edu/eclipse). Les tâches Ant, Maven ou un <em>plugin</em> Sonar permettent quant à eux de l'inclure dans un processus d'intégration continue.</p>
+
+<p>Pour conclure, on peut noter que Google l'utilise lors de ses "FixIt Days". Ce sont des jours dans l'année dédiée à la résolution des TODO, des notes et des vices cachés des programmes que les développeurs de Google écrivent. Cette pratique n'est pas encore très suivie dans toutes les entreprises, mais semble pertinente quand l'on constate la qualité quelques logiciels...</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,tests,development]]></tags>
+</document>

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document>
+	<title><![CDATA[OSGi pour l'architecture Java EE]]></title>
+	<allow_com>0</allow_com>
+	<template><![CDATA[article.php]]></template>
+	<chapo><![CDATA[]]></chapo>
+	<content><![CDATA[<p><img class="alignleft size-full wp-image-2769" src="http://08000linux.com/blogs/files/2010/05/OSGi.png" alt="OSGi" width="200" height="115" />
+Bien qu'ayant de nombreux avantages, Java EE génère souvent des applications ou <em>frameworks</em> monolithiques, aux tailles conséquentes et donc peu flexibles. Plusieurs sociétés très impliquées dans le développement logiciel se sont donc posé la question de classifier, trier, organiser et homogénéiser les tâches que l'on retrouve régulièrement dans les WARs et EARs. C'est le but du standard <a href="http://www.osgi.org/">Open Services Gateway initiative</a> (OSGi), qui définit un modèle de gestion de cycle de vie d’une application, un répertoire (registry) de services, un environnement d'exécution et des modules.</p>
+
+<p>Pour combattre la horde insoumise de fonctionnalités récurrentes des applications Java EE, il fallait bien une Alliance : l'<a href="http://www.osgi.org/Main/HomePage">OSGI Alliance</a> ! Celle-ci a été créée en 1999 par <a href="http://www.osgi.org/About/Members">des entreprises</a> conscientes dès lors de ce besoin d'harmonisation. On y retrouve les grands noms habituels de l'industrie informatique mondiale tels qu'Oracle, IBM, Red Hat, feu SUN, etc. Le résultat de leurs travaux est la spécification du standard ouvert OSGi <a href="http://www.osgi.org/Specifications/HomePage">aujourd'hui dans sa version 4</a>.</p>
+
+<p>Un des premiers chantier de l'OSGi a été d'identifier les services habituels des applications et <em>frameworks</em> Java EE :
+<ul>
+	<li>Journalisation</li>
+	<li>Configuration, administration</li>
+	<li>Accès aux périphériques</li>
+	<li>Authentification</li>
+	<li>Connections d'entrée/sortie</li>
+	<li>Préférences</li>
+	<li>...</li>
+</ul>
+Voir <a href="http://en.wikipedia.org/wiki/OSGi#Services">la liste exhaustive sur Wikipedia</a> ainsi que le graphique suivant qui décrit l'architecture.
+<img class="alignright size-full wp-image-2770" src="http://08000linux.com/blogs/files/2010/05/osgi31644_archi.gif" alt="osgi31644_archi" width="100%" /></p>
+
+<p>Le standard OSGi préconise ainsi à tout projet Java souhaitant implémenter la norme de découper son code selon ces catégories et d'utiliser un sous-format de <em>bundle</em>, un JAR contenant les informations de nom, versions et autres dans un fichier MANIFEST spécifique. Cette proposition d'agencement apporte une grande modularité entre les différents services qui pourront s'appeler entre eux ou proposer leurs services.
+La norme OSGi spécifie aussi tout un cycle de vie des <em>bundles</em> qui doivent pouvoir être installés, démarrés, utilisés, arrêtés, redémarrés et désinstallés automatiquement et à chaud comme le schématise le diagramme ci-contre. Ceci implique la possibilité de mettre à jour et de redémarrer une partie de l'architecture sans impact lourd pour la plate-forme ; une fonctionnalité assez rare en Java.
+<img class="alignright size-full wp-image-2771" src="http://08000linux.com/blogs/files/2010/05/250px-OSGi_Bundle_Life-Cycle.svg.png" alt="250px-OSGi_Bundle_Life-Cycle.svg" width="250" height="189" /></p>
+
+<p>Les projets qui tombent dans le giron de cette norme sont très divers : on y retrouve pêle-mêle les serveurs d'applications <a href="https://glassfish.dev.java.net/">GlassFish</a>, <a href="http://www.jboss.org/">JBoss</a>, <a href="http://wiki.jonas.ow2.org/xwiki/bin/view/Main/WebHome">JOnAS</a> et <a href="http://www.oracle.com/us/products/middleware/application-server/index.htm">Weblogic</a>, des <em>frameworks</em> comme <a href="http://wiki.easybeans.org/xwiki/bin/view/Main/WebHome">EasyBeans</a> ainsi que les IDE libres leaders du marché <a href="http://netbeans.org/">NetBeans</a> et <a href="http://www.eclipse.org/">Eclipse.</a> Ce dernier est d'ailleurs un très bon exemple OSGi puisque depuis sa version 3, son coeur (<a href="http://www.eclipse.org/equinox/">Equinox</a>) est une pure implémentation de la norme OSGi dans sa dernière version.</p>
+
+<p>La concertation des acteurs de l'industrie Java sur des normes telle que l'OSGi ainsi que l'adoption de celle-ci par de grand projets est le garant d'une interopérabilité aujourd'hui indispensable dans le puzzle des <em>frameworks</em> Java. On ne peut donc que saluer et encourager ce genre de travaux qui permettent de clarifier la conception d'applications.</p>
+
+<p><em>Article publié sur <a href="http://linuxfr.org/~galaux/">LinuxFr</a> dans le cadre de mon activité professionnelle à <a href="http://linagora.com/">Linagora</a>.</em></p>]]></content>
+	<tags><![CDATA[java,development,server]]></tags>
+</document>
