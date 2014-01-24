@@ -6,7 +6,7 @@ category: articles
 tags: [java,server]
 ---
 
-![](http://www.08000linux.com/blogs/files/2009/10/logo-glassfish.png)
+![Glassfish application server](http://www.08000linux.com/blogs/files/2009/10/logo-glassfish.png)
 
 [GlassFish](https://glassfish.dev.java.net/) est un serveur d'applications Java EE dont le développement a été initié et est aujourd'hui encore dirigé par SUN. Voyons tout de suite ce qui a pû motiver le lancement d'un tel projet alors qu'il existe déjà plusieurs solutions éprouvées dans le domaine. [](http://www.08000linux.com/blogs/files/2009/10/logo-glassfish.png)
 
