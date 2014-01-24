@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hudson, l'aigle de l'intégration continue
-description: ""
+description: "Un mauvais jeu de mot de sert jamais un bon film…"
 category: articles
 tags: [java]
 ---

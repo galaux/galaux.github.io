@@ -1,7 +1,7 @@
 ---
 layout: post
 title: UEFI and Linux killed my Grub
-description: ""
+description: "Boot directly from EFI to your Linux kernel"
 category: articles
 tags: [archlinux,boot]
 ---
@@ -12,12 +12,12 @@ So while reading wiki articles and blog posts in order to figure out what I shou
 
 This article repeats what has already been explained in [this post by Rod Smith](http://www.rodsbooks.com/efi-bootloaders/efistub.html) (thank you very much for the great article) and adds a trick that some might not like. So let us explain it here so that you will not get shocked after I made you format your partitions :).
 
-Basically the technique explained in [Rod Smith's post](http://www.rodsbooks.com/efi-bootloaders/efistub.html) lets you create a boot entry that instructs the UEFI to load a kernel located (inside the boot partition) at `<BOOT_PARTITION>\EFI\my_os\vmlinuz-linux` (I use backslash as a UEFI boot partition must be `FAT` formatted and backslash must be used when handling UEFI boot entries with `efibootmgr`). The only issue you are left with is "maintenance". The reason is because EFI uses a standard folder hierarchy on the boot partition
+Basically the technique explained in [Rod Smith's post](http://www.rodsbooks.com/efi-bootloaders/efistub.html) lets you create a boot entry that instructs the UEFI to load a kernel located (inside the boot partition) at `<BOOT_PARTITION>\EFI\my_os\vmlinuz-linux` (I use backslash as a UEFI boot partition must be FAT formatted and backslash must be used when handling UEFI boot entries with `efibootmgr`). The only issue you are left with is "maintenance". The reason is because EFI uses a standard folder hierarchy on the boot partition like such:
 
     <BOOT_PARTITION>\EFI\
-        my_os\
-        other_os\
-        yet_another_os\
+      |- my_os\
+      |- other_os\
+      \- yet_another_os\
 
 And this `<BOOT_PARTITION>` must be mounted in `/boot/efi`
 
@@ -30,52 +30,53 @@ In this article, I explain how I made what is previously explained while install
 Installing Arch Linux with direct UEFI boot
 -------------------------------------------
 
-Install your Arch Linux "as usual" (following the official install guide for instance) When "partitionning", create a boot partition (mine was a `GPT` - `FAT32` is compulsory for UEFI) and mount it as `/mnt/boot`.\
+Install your Arch Linux "as usual" (following the official install guide for instance) When "partitionning", create a boot partition (mine was a GPT - FAT32 is compulsory for UEFI) and mount it as `/mnt/boot`.\
  While hitting the "Boot loader" part, do not install GRUB but instead install `efibootmgr` (the UEFI tool):
 
-~~~~ {.markup}
-# pacstrap /mnt efibootmgr
-~~~~
+{% highlight bash %}
+pacstrap /mnt efibootmgr
+{% endhighlight %}
 
 This tool will let you create/read/delete entries on the UEFI boot array Go on with the install procedure. After performing the "`genstab`" step (`genfstab -p /mnt >> /mnt/etc/fstab`), you should get inside your `/mnt/etc/fstab` a line to mount the boot partition as `/boot`. Go ahead with installation. After you chrooted into you installation dir (`/mnt`) you should see your boot partition mounted. If not then mount it.
 
-~~~~ {.markup}
-# mount | grep boot
+{% highlight bash %}
+mount | grep boot
 /dev/sda1 on /boot type vfat <... blahblahblah>
-~~~~
+{% endhighlight %}
 
 Go on with the install procedure until you hit "Configure the bootloader". As previously explained, no need to install GRUB. The only thing we need to do is create an entry on the UEFI that loads the kernel that pacman installs as `/boot/vmlinuz-linux`. We are going to use the `efibootmgr` binary we installed previously. So we will want to load the corresponding module:
 
-~~~~ {.markup}
+{% highlight bash %}
 modprobe efivars
-~~~~
+{% endhighlight %}
 
 As this kernel is actually installed directly at the root of `<BOOT_PARTITION>\`, we can use the following command (with customization):
 
-~~~~ {.markup}
+{% highlight bash %}
 echo "root=UUID=52c2c3d9-52a3-4ebc-95e3-1fcaeeba4a57 ro rootfstype=ext4 add_efi_memmap initrd=initramfs-linux.img init=/bin/systemd" \
     | iconv -f ascii -t ucs2 \
     | efibootmgr --create --gpt --disk /dev/sda --part 1 --label 'Arch Linux' --loader 'vmlinuz-linux' --append-binary-args -
-~~~~
+{% endhighlight %}
 
--   "`root=UUID="` Must hold your root partitin UUID. Use `root=` if you prefer the udev "`sda`" way.
--   "`rootfstype="` Must hold your root partition filesystem type
--   "`initrd=initramfs-linux.img"` The name of the `initrd` image to boot. This should not change for Archers.
--   "`init=/bin/systemd"` Just if you use systemd during initial Arch Linux install of course. Ommit it otherwise.
+- `root=UUID=` Must hold your root partitin UUID. Use `root=` if you prefer the udev "`sda`" way.
+- `rootfstype=` Must hold your root partition filesystem type
+- `initrd=initamfs-linux.img` The name of the `initrd` image to boot. This should not change for Archers.
+- `init=/bin/systemd` Just if you use systemd during initial Arch Linux install of course. Ommit it otherwise.
 
--   "`--create`" instructs efibootmgr to create the entry on the UEFI table
--   "`--disk <CHANGE_ME>`" the hard drive device on which to write the entry
--   "`--part <CHANGE_ME>`" the partition of the hard drive on which to write the entry
--   "`--label <CHANGE_ME>`" The string you want to see when choosing which OS to boot
--   "`--loader 'vmlinuz-linux'`" The kernel file. This should not change for Archers. Note that we specify here a file that is at the root of the (boot) partition as explained earlier
+- `--create` instructs efibootmgr to create the entry on the UEFI table
+- `--disk <CHANGE_ME>` the hard drive device on which to write the entry
+- `--part <CHANGE_ME>` the partition of the hard drive on which to write the entry
+- `--label <CHANGE_ME>` The string you want to see when choosing which OS to boot
+- `--loader 'vmlinuz-linux'` The kernel file. This should not change for Archers. Note that we specify here a file that is at the root of the (boot) partition as explained earlier
 
-Note to Archers: one can also add a similar entry with the `fallback` initramfs image. Please note the dash ("`-`") at the end of the command. Also note that we first echo parameters, then pipe them through iconv to change encoding. This could be investigated after as it looks like efibootmgr seems to accept ascii characters as explained by its man page. One can also see the result by just issuing "efibootmgr" which will print the current entries and their boot order. Side note for [Asus N56VZ](http://www.asus.com/Notebooks/Multimedia_Entertainment/N56VZ/#specifications) (and maybe also to similar computers/motherboards): you can also add a UEFI shell in your boot partition (`<BOOT_PARTITION>`) name it `shellx64.efi` for `x86_64`. See the last paragraph of this article for more about this. Afterwards, if you are installing your Arch Linux, do not forget to finish the install procedure (only thing left: change root password).
+Note to Archers: one can also add a similar entry with the `fallback` initramfs image.
+Please note the dash (`-`) at the end of the command. Also note that we first echo parameters, then pipe them through iconv to change encoding. This could be investigated after as it looks like efibootmgr seems to accept ascii characters as explained by its man page. One can also see the result by just issuing "efibootmgr" which will print the current entries and their boot order. Side note for [Asus N56VZ](http://www.asus.com/Notebooks/Multimedia_Entertainment/N56VZ/#specifications) (and maybe also to similar computers/motherboards): you can also add a UEFI shell in your boot partition (`<BOOT_PARTITION>`) name it `shellx64.efi` for `x86_64`. See the last paragraph of this article for more about this. Afterwards, if you are installing your Arch Linux, do not forget to finish the install procedure (only thing left: change root password).
 
 Now, just reboot and you should enjoy a plain UEFI direct to kernel boot! If your computer does not seem to boot on the right entry, enter the BIOS with your usual magic keystroke and navigate to a UEFI or boot option. You should see all valid entries UEFI found. Select yours and press enter. If you added the `shellx64.efi` ASUS firmware in the `BOOT_PARTITION` you should also have a supplementary entry here that will get you to a UEFI command line interface. This will greatly help you if you cannot boot the previously installed OS. Just enter `fs0:` to select your sda1 partition and then enter the previous kernel parameters to boot your distribution:
 
-~~~~ {.markup}
+{% highlight bash %}
 root=UUID= ro rootfstype= add_efi_memmap initrd=initramfs-linux.img init=/bin/systemd ("init=/bin/systemd" if required)
-~~~~
+{% endhighlight %}
 
-In case something went wrong... well you cannot boot so you cannot complain here : write me a letter! (funny how [I seem to be keen on remotly breaking people's computer]({{ site.url }}/transparent-encrypted-partition-unlocking-locking-at-login-unlogin-in-arch-linux). I really should see someone about that...).
+In case something went wrong... well you cannot boot so you cannot complain here : write me a letter! (funny how [I seem to be keen on remotly breaking people's computer]({{ site.url }}/articles/transparent-encrypted-partition-unlocking-locking-at-login-unlogin-in-arch-linux). I really should see someone about that...).
 

@@ -1,14 +1,16 @@
 ---
 layout: post
 title: Terracotta monte les JVM en grappe
-description: ""
+description: "Clustering de JVM au programme"
 category: articles
 tags: [java,administration]
 ---
 
-![logo](http://08000linux.com/blogs/files/2009/11/logo.png)Pour satisfaire les besoins des applications JavaEE modernes, le recours au *clustering* est souvent indispensable. Celui-ci vise à augmenter les ressources allouées aux applications en multipliant les serveurs à sa disposition. Les solutions de *clustering* de serveurs d'application et de bases de données sont légions dans les environnements techniques des entreprises modernes mais qu'en est-il du clustering de JVM?
+![logo](http://08000linux.com/blogs/files/2009/11/logo.png)
 
-C'est la mission que s'est donnée [Terracotta](http://www.terracotta.org/) avec son outil OpenTerracotta. L'idée derrière le concept de Terracotta est de *descendre* la mise en grappe d'un cran pour l'appliquer directement aux machines virtuelles Java. Ceci permet de faire fonctionner une application trop gourmande pour une seule JVM sur plusieurs d'entre-elles de façon complètement transparente pour l'applicatif. De cette manière, le développeur est débarrassé de toute préoccupation de programmation en grappe et peut ainsi se consacrer pleinement à son application dont la conception est de fait simplifiée.\
+Pour satisfaire les besoins des applications JavaEE modernes, le recours au *clustering* est souvent indispensable. Celui-ci vise à augmenter les ressources allouées aux applications en multipliant les serveurs à sa disposition. Les solutions de *clustering* de serveurs d'application et de bases de données sont légions dans les environnements techniques des entreprises modernes mais qu'en est-il du clustering de JVM?
+
+C'est la mission que s'est donnée [Terracotta](http://www.terracotta.org/) avec son outil OpenTerracotta. L'idée derrière le concept de Terracotta est de *descendre* la mise en grappe d'un cran pour l'appliquer directement aux machines virtuelles Java. Ceci permet de faire fonctionner une application trop gourmande pour une seule JVM sur plusieurs d'entre-elles de façon complètement transparente pour l'applicatif. De cette manière, le développeur est débarrassé de toute préoccupation de programmation en grappe et peut ainsi se consacrer pleinement à son application dont la conception est de fait simplifiée.
  L'architecture d'une telle solution est classique quand il s'agit de *clustering* : un serveur, des clients et (moins courant) un serveur de stockage.
 
 [![terracotta\_architecture](http://08000linux.com/blogs/files/2009/11/terracotta_architecture.png)](http://08000linux.com/blogs/files/2009/11/terracotta_architecture.png)

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Terrastore - stockage No-SQL pour application web
-description: ""
+description: "Yet another NoSQL JSON database"
 category: articles
 tags: [database,java,development]
 ---
@@ -15,4 +15,3 @@ Le nom de TerraStore témoigne de l'utilisation sous-jacente de [Terracotta](htt
 Les ambitions de solutions telles que CouchDB et TerraStore ne sont peut-être pas de révolutionner le monde des bases de données mais l'effort reste très intéressant et prometteur. Ces solutions sont donc à surveiller car elles pourraient être une autre preuve de la théorie de l'évolution mais cette fois-ci dans le domaine de l'informatique.
 
 *Article publié sur [LinuxFr](http://linuxfr.org/~galaux/) dans le cadre de mon activité professionnelle à [Linagora](http://linagora.com/).*
-

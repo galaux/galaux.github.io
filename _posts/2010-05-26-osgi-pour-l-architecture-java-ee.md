@@ -1,24 +1,26 @@
 ---
 layout: post
 title: OSGi pour l'architecture Java EE
-description: ""
+description: "Présentation de l'architecture OSGi"
 category: articles
 tags: [java,development,server]
 ---
 
-![OSGi](http://08000linux.com/blogs/files/2010/05/OSGi.png) Bien qu'ayant de nombreux avantages, Java EE génère souvent des applications ou *frameworks* monolithiques, aux tailles conséquentes et donc peu flexibles. Plusieurs sociétés très impliquées dans le développement logiciel se sont donc posé la question de classifier, trier, organiser et homogénéiser les tâches que l'on retrouve régulièrement dans les WARs et EARs. C'est le but du standard [Open Services Gateway initiative](http://www.osgi.org/) (OSGi), qui définit un modèle de gestion de cycle de vie d’une application, un répertoire (registry) de services, un environnement d'exécution et des modules.
+![OSGi](http://08000linux.com/blogs/files/2010/05/OSGi.png)
+
+Bien qu'ayant de nombreux avantages, Java EE génère souvent des applications ou *frameworks* monolithiques, aux tailles conséquentes et donc peu flexibles. Plusieurs sociétés très impliquées dans le développement logiciel se sont donc posé la question de classifier, trier, organiser et homogénéiser les tâches que l'on retrouve régulièrement dans les WARs et EARs. C'est le but du standard [Open Services Gateway initiative](http://www.osgi.org/) (OSGi), qui définit un modèle de gestion de cycle de vie d’une application, un répertoire (registry) de services, un environnement d'exécution et des modules.
 
 Pour combattre la horde insoumise de fonctionnalités récurrentes des applications Java EE, il fallait bien une Alliance : l'[OSGI Alliance](http://www.osgi.org/Main/HomePage) ! Celle-ci a été créée en 1999 par [des entreprises](http://www.osgi.org/About/Members) conscientes dès lors de ce besoin d'harmonisation. On y retrouve les grands noms habituels de l'industrie informatique mondiale tels qu'Oracle, IBM, Red Hat, feu SUN, etc. Le résultat de leurs travaux est la spécification du standard ouvert OSGi [aujourd'hui dans sa version 4](http://www.osgi.org/Specifications/HomePage).
 
 Un des premiers chantier de l'OSGi a été d'identifier les services habituels des applications et *frameworks* Java EE :
 
--   Journalisation
--   Configuration, administration
--   Accès aux périphériques
--   Authentification
--   Connections d'entrée/sortie
--   Préférences
--   ...
+- Journalisation
+- Configuration, administration
+- Accès aux périphériques
+- Authentification
+- Connections d'entrée/sortie
+- Préférences
+- ...
 
 Voir [la liste exhaustive sur Wikipedia](http://en.wikipedia.org/wiki/OSGi#Services) ainsi que le graphique suivant qui décrit l'architecture. ![osgi31644\_archi](http://08000linux.com/blogs/files/2010/05/osgi31644_archi.gif)
 
@@ -29,4 +31,3 @@ Les projets qui tombent dans le giron de cette norme sont très divers : on y re
 La concertation des acteurs de l'industrie Java sur des normes telle que l'OSGi ainsi que l'adoption de celle-ci par de grand projets est le garant d'une interopérabilité aujourd'hui indispensable dans le puzzle des *frameworks* Java. On ne peut donc que saluer et encourager ce genre de travaux qui permettent de clarifier la conception d'applications.
 
 *Article publié sur [LinuxFr](http://linuxfr.org/~galaux/) dans le cadre de mon activité professionnelle à [Linagora](http://linagora.com/).*
-

@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Développer sans bug avec FindBugs?
-description: ""
+description: "Trouver des bugs dans ses projets Java"
 category: articles
 tags: [java,tests,development]
 ---
 
-![buggy-sm](http://08000linux.com/blogs/files/2010/01/buggy-sm.png)![informal](http://08000linux.com/blogs/files/2010/01/informal.png)Il existe nombre d'outils d'audit de code dans l'univers du développement Java qui sont autant d'armes contre les faux-pas de développement. [FindBugs](http://findbugs.sourceforge.net/) (qui porte bien son nom...) propose de parcourir les applications java à la recherche de motifs à problèmes.
+![buggy-sm](http://08000linux.com/blogs/files/2010/01/buggy-sm.png)
+
+Il existe nombre d'outils d'audit de code dans l'univers du développement Java qui sont autant d'armes contre les faux-pas de développement. [FindBugs](http://findbugs.sourceforge.net/) (qui porte bien son nom...) propose de parcourir les applications java à la recherche de motifs à problèmes.
 
 L'outil développé par l'Université du Maryland appartient à la famille des analyseurs statiques comme [PMD](http://pmd.sourceforge.net/) ou [CheckStyle](http://checkstyle.sourceforge.net/). Il ne cherche pas à observer l'application en action mais plutôt à se plonger dans son code. Cependant FindBugs se différencie au sein de cette famille par le fait que son analyse est effectuée sur le *bytecode* plutôt que sur le code source.
 
@@ -19,4 +21,3 @@ L'Université du Maryland propose son outil sous diverses formes qui vont de l'a
 Pour conclure, on peut noter que Google l'utilise lors de ses "FixIt Days". Ce sont des jours dans l'année dédiée à la résolution des TODO, des notes et des vices cachés des programmes que les développeurs de Google écrivent. Cette pratique n'est pas encore très suivie dans toutes les entreprises, mais semble pertinente quand l'on constate la qualité quelques logiciels...
 
 *Article publié sur [LinuxFr](http://linuxfr.org/~galaux/) dans le cadre de mon activité professionnelle à [Linagora](http://linagora.com/).*
-

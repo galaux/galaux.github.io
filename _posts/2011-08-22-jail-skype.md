@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Jail Skype!
-description: ""
+description: "How to prevent a bad piece of software from spying on you"
 category: articles
 tags: [security]
 ---

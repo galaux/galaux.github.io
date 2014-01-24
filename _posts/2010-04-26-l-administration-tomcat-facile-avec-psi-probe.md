@@ -1,25 +1,25 @@
 ---
 layout: post
 title: L'administration Tomcat facile avec PSI-probe
-description: ""
+description: "J'ai des webapps c'est bien mais comment les administrer?"
 category: articles
 tags: [java,administration]
 ---
 
-[![logo](http://08000linux.com/blogs/files/2010/04/logo1.png)Tomcat](http://tomcat.apache.org/), le serveur web (conteneur de servlets) bien connu de la fondation Apache séduit par sa robustesse et sa simplicité. Robuste, simple, fiable, clusterisable, tout ça est très bien mais qu'en est il de la supervision ? Il est essentiel pour des équipes d'exploitation de garder une vue des métriques vitales des serveurs qu'elles administrent surtout en ces temps de *clustering,* qui rajoute une couche de complexité. Petit retour sur un projet qui renait de ses centres, pour garder la main sur Tomcat donc, rien de tel que [PSI-probe](http://code.google.com/p/psi-probe/).
+[Tomcat](http://tomcat.apache.org/), le serveur web (conteneur de servlets) bien connu de la fondation Apache séduit par sa robustesse et sa simplicité. Robuste, simple, fiable, clusterisable, tout ça est très bien mais qu'en est il de la supervision ? Il est essentiel pour des équipes d'exploitation de garder une vue des métriques vitales des serveurs qu'elles administrent surtout en ces temps de *clustering,* qui rajoute une couche de complexité. Petit retour sur un projet qui renait de ses centres, pour garder la main sur Tomcat donc, rien de tel que [PSI-probe](http://code.google.com/p/psi-probe/).
 
 L'historique de l'outil est tumultueux : initié sous le nom de "Tomcat-Probe", le projet a été renomé en [Lambda-probe](http://www.lambdaprobe.org/) avant de rentrer dans une phase d'inactivité encore effective aujourd'hui. Alors Lambda-probe, projet mort? C'était sans compter sur la force des communautés *Open Source*. Sans nouvelles du développeur et confortés par la licence GPL, des utilisateurs du forum ont repris le développement de l'outil d'administration de serveur Tomcat en le *forkant* : PSI-probe.
 
 Les mesures proposées par PSI-probe dans sa version 2.0.2 sont très diverses :
 
--   gestion des applications déployées (affichage des sessions et de leurs détails, désactivation de celles-ci), de leurs composantes (connexions JDBC)
--   gestion des *datasources*, visualisation de leurs taux d'engorgement
--   déploiement d'applications
--   affichage des *logs* Tomcat et des logs applicatifs
--   informations sur les processus en cours
--   gestion en *clusters*
--   informations système de l'hôte
--   état du serveur
+- gestion des applications déployées (affichage des sessions et de leurs détails, désactivation de celles-ci), de leurs composantes (connexions JDBC)
+- gestion des *datasources*, visualisation de leurs taux d'engorgement
+- déploiement d'applications
+- affichage des *logs* Tomcat et des logs applicatifs
+- informations sur les processus en cours
+- gestion en *clusters*
+- informations système de l'hôte
+- état du serveur
 
 La liste impressionantes de ses possibilités par rôle est à consulter [sur le site](http://code.google.com/p/psi-probe/wiki/Features).
 
@@ -34,4 +34,3 @@ Comme on a pu le voir au moment de l'inactivité du projet, [le forum](http://ww
 PSI-probe? Un incontournable!
 
 *Article publié sur [LinuxFr](http://linuxfr.org/~galaux/) dans le cadre de mon activité professionnelle à [Linagora](http://linagora.com/).*
-

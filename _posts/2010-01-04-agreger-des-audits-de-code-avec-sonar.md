@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Agréger des audits de code avec Sonar
-description: ""
+description: "Sonar et ses audits de code"
 category: articles
 tags: [java,tests,development]
 ---
@@ -11,13 +11,12 @@ Dans le monde du développement Java, on ne compte plus les outils de revue de c
 Pour mieux comprendre son mode de fonctionnement : voyons-en l'architecture. Une fois installé et lancé, Sonar fournit une interface web qui propose les habituelles pages de configuration sur le port 9000 de la machine hôte. C'est ici que se fait le paramétrage des outils sous-jacents que l'on souhaite utiliser. La capture suivante montre la fine granularité de configuration mise à disposition. [![01\_config](http://08000linux.com/blogs/files/2009/12/01_config1.png)](http://08000linux.com/blogs/files/2009/12/01_config1.png)
 
 Sonar recoupe les différents vérificateurs de code et analyse ainsi le code selon 6 axes :
-
--   identification des duplications (CPD, PMD)
--   mesure du niveau de documentation
--   respect des règles de programmation (Checkstyle, PMD)
--   détection des bugs potentiels (FindBugs)
--   évaluation de la couverture de code par les tests unitaires (Cobertura, Clover, Emma, JUnit, Surefire)
--   analyse de la répartition de la complexité
+- identification des duplications (CPD, PMD)
+- mesure du niveau de documentation
+- respect des règles de programmation (Checkstyle, PMD)
+- détection des bugs potentiels (FindBugs)
+- évaluation de la couverture de code par les tests unitaires (Cobertura, Clover, Emma, JUnit, Surefire)
+- analyse de la répartition de la complexité
 
 Une fois la configuration faite, les utilisateurs de Maven ne seront plus qu'à une commande de générer automatiquement tous les précieux rapports d'audit : `mvn sonar:sonar` Pour les projets qui ne seraient pas encore "mavenisés", Sonar propose [un tutoriel de quelques lignes](http://docs.codehaus.org/display/SONAR/Collect+data#Collectdata-NonMavenprojects%28sonarlightmode%29) pour remédier au problème.
 

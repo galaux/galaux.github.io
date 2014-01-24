@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Dios Mio, écorché d'une webapp
-description: ""
+description: "Présentation de l'architecture générale d'une webapp"
 category: articles
 tags: [java,development,spring,jpa]
 ---
-
-*This article in french is the first of a serie I intend to write about a web application I am currently developping for training purpose. The english version of the articles should come up later. In the meantime you can still have a look at [the source code of the application](https://github.com/galaux/diosmio).*
 
 [*Dios Mio*](https://github.com/galaux/diosmio) est une application web Java EE test qui me sert de laboratoire pour mettre en pratique différents frameworks, API, concepts d'architecture. Elle est en perpétuelle évolution/remodelage et n'est donc pas utilisable en l'état. L'application ainsi que cette série d'articles sont publiés dans le but de partager l'expérience acquise lors de la résolution de certains problèmes d'architecture qui n'ont évidemment pas manqué de se poser.
 
@@ -61,16 +59,15 @@ Dios Mio est compilée/assemblée par Maven et développée initialement sous [I
 
 L'application se décompose en quatre modules Maven plus un module web de test :
 
--   `diosmio-services` :\
+-   `diosmio-services` :
      Contient les DAO ainsi que les services de plus haut niveau. Tous sont injectables via Spring.
--   `diosmio-com` :\
+-   `diosmio-com` :
      Contient les entités annotées JPA utilisées dans diosmio-services ainsi que les classes de communication externes Thrift et/ou Protobuf (ébauches).
--   `diosmio-gwt` :\
+-   `diosmio-gwt` :
      Contient l'application web GWT et déclare les beans Spring services, DAO et RMI Exporter qu'elle utilise ainsi que tous les autres beans utilisés dans l'application.
--   `diosmio-cli` :\
+-   `diosmio-cli` :
      Contient le code de la CLI avec son connecteur RMI.
--   `diosmio-web` :\
+-   `diosmio-web` :
      Contient l'application web sans JSP dont le but était d'instancier les beans Spring quand la partie GWT n'existait pas encore.
 
 Tout point de vue ou question sur cette application sont les bienvenus. Ce n'est peut-être pas la meilleure implémentation, c'en est juste une parmi d'autres. Si vous pensez qu'une autre solution pour tel ou tel point d'architecture aurait été plus judicieuse, n'hésitez pas à laisser un commentaire. Enfin si vous pensez que vous pourriez avoir besoin de mes compétences dans votre équipe, mon CV se trouve en haut de cette page ;).
-

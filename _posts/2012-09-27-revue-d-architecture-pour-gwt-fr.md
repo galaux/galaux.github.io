@@ -1,12 +1,10 @@
 ---
 layout: post
 title: Revue d'architecture pour GWT
-description: ""
+description: "Les principaux éléments de GWT expliqués comme si vous y étiez"
 category: articles
 tags: [java,development]
 ---
-
-*This article in french belongs to a serie of articles I intend to write about a web application I am currently developping for training purpose. The english version of the articles should come up later. In the meantime you can still have a look at [the source code of the application](https://github.com/galaux/diosmio).*
 
 [GWT](https://developers.google.com/web-toolkit/) est un ensemble de composants graphiques pour application web mais qui veut s'y initier s'aperçoit vite que le vrai challenge ne se situe pas dans les composants eux-même mais dans l'architecture de l'application qui utilise ces composants. À la lecture des [tutoriels officiel de Google](https://developers.google.com/web-toolkit/doc/latest/DevGuide), on découvre qu'il existe une multitude de *patterns*, de méthodes et de frameworks pour architecturer une application GWT. Certains sont officiels Google, d'autres non, certains sont compatibles entre eux, certains plus adapté à certains cas d'utilisation.
 

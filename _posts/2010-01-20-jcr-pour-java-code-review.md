@@ -1,7 +1,7 @@
 ---
 layout: post
 title: JCR pour Java Code Review
-description: ""
+description: "Comment faire un code review Java avec JCR"
 category: articles
 tags: [java,tests,development]
 ---
@@ -11,10 +11,9 @@ La revue de code n'est pas une discipline du développement qui évolue sous les
 JCR est codé en Python et utilise une base de données pour stocker les différents éléments des projets en cours de revue. L'architecture technique de JCR repose sur le concept de l'application web consultable par les différents acteurs d'un projet de revue de code.
 
 Côté utilisateur, JCR propose différents rôles:
-
--   Un administrateur
--   Des *project owners*
--   Des *reviewers*
+- Un administrateur
+- Des *project owners*
+- Des *reviewers*
 
 La tâche de gestion des accès aux dépôts SVN est dévolue à l'administrateur, qui a aussi la responsabilité de créer les projets proprement dits. [![01](http://08000linux.com/blogs/files/2009/12/01.png)](http://08000linux.com/blogs/files/2009/12/01.png)
 

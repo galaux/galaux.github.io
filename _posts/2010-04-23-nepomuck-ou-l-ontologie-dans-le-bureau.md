@@ -1,12 +1,14 @@
 ---
 layout: post
 title: Nepomuck ou l'ontologie dans le bureau
-description: ""
+description: "Incontournable du bureau virtuel de demain ou buzz world?"
 category: articles
 tags: [desktop]
 ---
 
-[![nepomuk-logo.320](http://08000linux.com/blogs/files/2010/04/nepomuk-logo.320.png)NEPOMUK](http://nepomuk.kde.org/) est un outil d'extraction et de stockage de méta informations sous KDE. Son nom est l'acronyme de *Network Environment for Personalized, Ontology-based Management of Unified Knowledge*. L'équipe de développement avait introduit cette nouveauté dans la version 4 de KDE sortie début 2008. Petit tour d'un outil mal connu qui pourtant peut s'avérer très utile pour exploiter des méta données, et donc proposer des développements de nouvelles fonctionnalités aux utilisateurs...
+![nepomuk-logo.320](http://08000linux.com/blogs/files/2010/04/nepomuk-logo.320.png)
+
+[NEPOMUK](http://nepomuk.kde.org/) est un outil d'extraction et de stockage de méta informations sous KDE. Son nom est l'acronyme de *Network Environment for Personalized, Ontology-based Management of Unified Knowledge*. L'équipe de développement avait introduit cette nouveauté dans la version 4 de KDE sortie début 2008. Petit tour d'un outil mal connu qui pourtant peut s'avérer très utile pour exploiter des méta données, et donc proposer des développements de nouvelles fonctionnalités aux utilisateurs...
 
 Caché derrière l'acronyme barbare de NEPOMUK, se cache le concept (non-moins "obfusqué") d'[ontologie](http://fr.wikipedia.org/wiki/Ontologie_%28informatique%29). Dans le domaine informatique, l'ontologie touche aux méta-données, ces informations qui ne sont pas stockées dans les fichiers de l'utilisateur mais qui sont plutôt des données descriptives des fichiers ainsi qu'aux liens que l'on peut déduire de ces informations. Ces méta-données qui intéressent NEPOMUK sont par exemple les *tags* des fichiers MP3 : ce n'est pas la donnée primaire du fichier MP3 mais des caractéristiques additionnelles stockées dans le fichier.
 
@@ -19,4 +21,3 @@ Au démarrage de KDE 4 on ne peut passer à côté de ce démon qui semblait uti
 Derrière le terme barbare d'ontologie se cache pour le domaine de l'environnement de bureau une mine d'information encore non exploitée que l'on atteint enfin avec NEPOMUK. L'avenir nous dira si l'exploitation de ces informations se révèlera pertinente pour l'utilisateur. Pour cela les développeurs d'applications "de bureau" ont maintenant des outils : charge à eux de les exploiter.
 
 *Article publié sur [LinuxFr](http://linuxfr.org/~galaux/) dans le cadre de mon activité professionnelle à [Linagora](http://linagora.com/).*
-
