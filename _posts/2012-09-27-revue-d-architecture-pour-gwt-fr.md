@@ -42,5 +42,4 @@ Cette solution apporte une solution simple au problème de *enhancement* décrit
 
 Cette solution semble particulièrement adaptée pour des applications à faible contenu métier, des applications [CRUD](http://fr.wikipedia.org/wiki/CRUD). On peut cependant imaginer utiliser un mélange des deux solutions : RequestFactory pour les parties de l'application qui ne font que créer, supprimer mettre à jour des entités et des DTO pour les parties au métier plus complexe.
 
-L'application complète de test [Dios Mio](http://www.alaux.net/index.php?article34/dios-mio-ecorche-d-une-webapp-fr) dont vous pouvez retrouver [le code source sur Github](https://github.com/galaux/diosmio) met en pratique certains de ces frameworks. Enfin, un prochain article exposera l'intégration de beans [Springs](http://www.springsource.org/) dans Dios Mio.
-
+L'application complète de test [Dios Mio]({{ site.url }}/articles/dios-mio-ecorche-d-une-webapp-fr) dont vous pouvez retrouver [le code source sur Github](https://github.com/galaux/diosmio) met en pratique certains de ces frameworks. Enfin, un prochain article exposera l'intégration de beans [Springs](http://www.springsource.org/) dans Dios Mio.
