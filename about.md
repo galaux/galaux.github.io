@@ -44,7 +44,7 @@ image:
   - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
   - Improved a social recommendation backend
   - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
-Personal training - from 08/2012 to 01/2013 (see [Personnal IT experience]({{ site.url }}/about/#personnal-it-experience))
+Personal training - from 08/2012 to 01/2013 (see [Other IT experience]({{ site.url }}/about/#other-it-experience))
 
 - [Société Générale](http://societegenerale.fr/) - Paris - from 10/2011 to 09/2012
   - Developped a set of complex marketing websites
@@ -66,7 +66,7 @@ Personal training - from 08/2012 to 01/2013 (see [Personnal IT experience]({{ si
   - Java EE 5, JSF, JPA, JDBC
   - Web services, SOAP, XML/HTTP, Oracle, Hibernate, JUnit
 
-## Personnal IT experience
+## Other IT experience
 - Self-training - from 08/2012 to 01/2013:
   - Created and developped a Java EE web application for training purpose
     - GWT, Spring, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra (Hector), Thrift, Google ProtoBuf, Intellij IDEA
