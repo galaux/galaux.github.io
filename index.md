@@ -1,7 +1,7 @@
 ---
 layout: home
-description: "A responsive Jekyll theme with editorial tendencies by designer Michael Rose."
-tags: [Jekyll, theme, responsive, blog, template]
+description: "Blog posts about (Java/Scala) development, Arch Linux and possibly anything else"
+tags: [archlinux, java, scala]
 image:
   feature: texture-feature-02.jpg
   credit: Texture Lovers
