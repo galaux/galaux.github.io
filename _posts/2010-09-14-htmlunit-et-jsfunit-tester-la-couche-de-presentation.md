@@ -134,7 +134,7 @@ Afin de pouvoir lancer ces tests, il est nécessaire d'inclure dans le fichier w
 
 Une fois l'application déployée, il est possible de lancer les test via une page de celle-ci. Le site officiel donne un exemple en utilisant un rapport [Cactus](http://jakarta.apache.org/cactus/integration/integration_browser.html) :
 
-[![servlettestrunner\_html](http://08000linux.com/blogs/files/2010/09/servlettestrunner_html.jpeg)](http://08000linux.com/blogs/files/2010/09/servlettestrunner_html.jpeg)
+[![servlettestrunner\_html]({{ site.url }}/images/2010/09/servlettestrunner_html.jpeg)]({{ site.url }}/images/2010/09/servlettestrunner_html.jpeg)
 
 De même que HTMLUnit, l'avantage de ce genre de *framework* est de tester et d'utiliser l'application de bout en bout. On ne teste plus de petites parties mais bien l'application dans sa totalité. Cette aspect a les défauts de ses qualités : il est nécessaire de conserver une application complète démarrée pour pouvoir effectuer les tests.
 

@@ -6,7 +6,7 @@ category: articles
 tags: [java,server]
 ---
 
-![JETTY](http://08000linux.com/blogs/files/2009/12/JETTY.gif)
+![JETTY]({{ site.url }}/images/2009/12/JETTY.gif)
 
 [Jetty](http://jetty.codehaus.org/jetty/) est le serveur HTTP et conteneur de servlet qu'il fallait suivre ces dernières années. Il a été massivement adopté dans les milieux professionnels pour sa légèreté, sa polyvalence et sa robustesse. Ses développeurs proposent depuis quelques temps sa [version 7](http://www.eclipse.org/jetty/about.php) considérée comme stable. Celle-ci devait implémenter la spécification 3.0 de Servlet mais le retard de la spécification a poussé son créateur à proposer cette version "intermédiaire".
 

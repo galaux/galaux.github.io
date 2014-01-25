@@ -6,7 +6,7 @@ category: articles
 tags: [desktop]
 ---
 
-![nepomuk-logo.320](http://08000linux.com/blogs/files/2010/04/nepomuk-logo.320.png)
+![nepomuk-logo.320]({{ site.url }}/images/2010/04/nepomuk-logo.320.png)
 
 [NEPOMUK](http://nepomuk.kde.org/) est un outil d'extraction et de stockage de méta informations sous KDE. Son nom est l'acronyme de *Network Environment for Personalized, Ontology-based Management of Unified Knowledge*. L'équipe de développement avait introduit cette nouveauté dans la version 4 de KDE sortie début 2008. Petit tour d'un outil mal connu qui pourtant peut s'avérer très utile pour exploiter des méta données, et donc proposer des développements de nouvelles fonctionnalités aux utilisateurs...
 
@@ -16,7 +16,7 @@ Les développeurs du projet NEPOMUK divisent ces informations en 3 catégories :
 
 Le but de NEPOMUK est ainsi de proposer des outils pour créer, gérer et requêter sur ces données et ainsi de pouvoir exploiter cette somme d'information dont on ne soupçonne pas toujours la présence.
 
-Au démarrage de KDE 4 on ne peut passer à côté de ce démon qui semblait utiliser beaucoup de ressources pour indexer les fichiers dans les premières heures de KDE 4. Cette gestion semble avoir été revue et il suffit de s'armer de patience lors d'un premier démarrage de l'environnement e bureau pour pouvoir utiliser l'outil. KRunner (un lanceur d'application de KDE que l'on peut appeler via le raccourci Alt+F2) propose par exemple un plugin pour NEPOMUK qui permet ainsi d'accéder à la liste des fichiers du répertoire *home* de l'utilisateur. "Alt+F2", "archli" et voilà tous les fichiers indexés correspondants au thème "ArchLinux" recherché. ![krunner](http://08000linux.com/blogs/files/2010/04/krunner.png)
+Au démarrage de KDE 4 on ne peut passer à côté de ce démon qui semblait utiliser beaucoup de ressources pour indexer les fichiers dans les premières heures de KDE 4. Cette gestion semble avoir été revue et il suffit de s'armer de patience lors d'un premier démarrage de l'environnement e bureau pour pouvoir utiliser l'outil. KRunner (un lanceur d'application de KDE que l'on peut appeler via le raccourci Alt+F2) propose par exemple un plugin pour NEPOMUK qui permet ainsi d'accéder à la liste des fichiers du répertoire *home* de l'utilisateur. "Alt+F2", "archli" et voilà tous les fichiers indexés correspondants au thème "ArchLinux" recherché. ![krunner]({{ site.url }}/images/2010/04/krunner.png)
 
 Derrière le terme barbare d'ontologie se cache pour le domaine de l'environnement de bureau une mine d'information encore non exploitée que l'on atteint enfin avec NEPOMUK. L'avenir nous dira si l'exploitation de ces informations se révèlera pertinente pour l'utilisateur. Pour cela les développeurs d'applications "de bureau" ont maintenant des outils : charge à eux de les exploiter.
 

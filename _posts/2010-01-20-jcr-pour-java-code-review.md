@@ -15,13 +15,13 @@ Côté utilisateur, JCR propose différents rôles:
 - Des *project owners*
 - Des *reviewers*
 
-La tâche de gestion des accès aux dépôts SVN est dévolue à l'administrateur, qui a aussi la responsabilité de créer les projets proprement dits. [![01](http://08000linux.com/blogs/files/2009/12/01.png)](http://08000linux.com/blogs/files/2009/12/01.png)
+La tâche de gestion des accès aux dépôts SVN est dévolue à l'administrateur, qui a aussi la responsabilité de créer les projets proprement dits. [![01]({{ site.url }}/images/2009/12/01.png)]({{ site.url }}/images/2009/12/01.png)
 
 Une fois cette formalité effectuée, JCR peut accéder aux modifications remontées par les développeurs. Viennent ensuite les *project owners* qui sont généralement les personnes à l'origine du code : ils soumettent leur travail à l'avis des *reviewers*.
 
 Ce découpage en rôles est le garant d'une utilisation aisée à grande échelle même s'il peut paraître compliqué dans un premier temps.
 
-Une fois ces paramétrages effectués et les rôles attribués, JCR permet de générer la liste des fichiers modifiés et la présente sous forme de différentiels colorés, ce qui assure une clarté lors de la revue de code. À chaque lecture d'un fichier modifié, un compteur s'incrémente et permet de s'assurer qu'un nombre suffisant de personnes a revu la modification. Les reviewers et les project owners ont aussi la possibilité d'échanger via un système de notes portant sur une modification du code. [![02](http://08000linux.com/blogs/files/2009/12/02.png)](http://08000linux.com/blogs/files/2009/12/02.png)
+Une fois ces paramétrages effectués et les rôles attribués, JCR permet de générer la liste des fichiers modifiés et la présente sous forme de différentiels colorés, ce qui assure une clarté lors de la revue de code. À chaque lecture d'un fichier modifié, un compteur s'incrémente et permet de s'assurer qu'un nombre suffisant de personnes a revu la modification. Les reviewers et les project owners ont aussi la possibilité d'échanger via un système de notes portant sur une modification du code. [![02]({{ site.url }}/images/2009/12/02.png)]({{ site.url }}/images/2009/12/02.png)
 
 Pour l'instant JCR ne supporte qu'[un seul gestionnaire de version](http://jcodereview.sourceforge.net/html/faq.html#why-jcr-instead-of-other-code-review-tools) (SVN), même si l'intégration avec d'autres gestionnaires est prévue. L'interface de JCR peut ensuite se révéler peu intuitive : créer son premier projet s'avère parfois compliqué pour le débutant du fait de l'arrangement des liens. Enfin, la documentation a tendance à être verbeuse et à perdre l'utilisateur curieux.
 

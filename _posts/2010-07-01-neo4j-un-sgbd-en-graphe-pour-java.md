@@ -29,7 +29,7 @@ mrAnderson.createRelationshipTo( morpheus, RelTypes.KNOWS );
 // Traduction : "mrAnderson KNOWS morpheus"
 {% endhighlight %}
 
-On retrouve cette relation, ainsi que d'autres, dans le graphe suivant : [![graphe](http://08000linux.com/blogs/files/2010/05/graphe.png)](http://08000linux.com/blogs/files/2010/05/graphe.png)
+On retrouve cette relation, ainsi que d'autres, dans le graphe suivant : [![graphe]({{ site.url }}/images/2010/05/graphe.png)]({{ site.url }}/images/2010/05/graphe.png)
 
 L'utilisation des données que le code précédent a créé est assez triviale ; par exemple pour retrouver les amis de "Mr Anderson" :
 

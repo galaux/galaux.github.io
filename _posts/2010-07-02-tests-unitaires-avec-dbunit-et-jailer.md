@@ -88,11 +88,11 @@ Comme on l'a vu précédemment, il est utile de s'affranchir de la partie persis
 
 Jailer est une application lourde qu'un développeur lance et connecte à la base de données :
 
-[![jailer\_settings](http://08000linux.com/blogs/files/2010/07/jailer_settings.png)](http://08000linux.com/blogs/files/2010/07/jailer_settings.png)
+[![jailer\_settings]({{ site.url }}/images/2010/07/jailer_settings.png)]({{ site.url }}/images/2010/07/jailer_settings.png)
 
 Après quelques paramétrages optionnels de plus, Jailer permet la sélection de données choisies comme le montre la capture suivante d'une base exemple d'employés :
 
-[![jailer\_export](http://08000linux.com/blogs/files/2010/07/jailer_export.png)](http://08000linux.com/blogs/files/2010/07/jailer_export.png)
+[![jailer\_export]({{ site.url }}/images/2010/07/jailer_export.png)]({{ site.url }}/images/2010/07/jailer_export.png)
 
 Dans la capture précédente issue du site officiel, on a demandé un export SQL mais on peut voir que l'outil permet de créer un fichier XML (au format DBUnit).
 

@@ -6,7 +6,7 @@ category: articles
 tags: [java,server]
 ---
 
-![JETTY](http://08000linux.com/blogs/files/2009/12/JETTY.gif)
+![JETTY]({{ site.url }}/images/2009/12/JETTY.gif)
 
 Dans la grande famille des serveurs Java, plusieurs objectifs se côtoient. Certains comme JBoss ou Glassfish jouent la carte de l'exhaustivité dans l'implémentation des fonctionnalités alors que d'autres se spécialisent. Parmi ces derniers, le serveur [Jetty](http://www.mortbay.org/jetty/) se distingue, lui, par son efficacité.
 

@@ -6,7 +6,7 @@ category: articles
 tags: [java,development]
 ---
 
-![logo](http://08000linux.com/blogs/files/2010/01/logo1.png)
+![logo]({{ site.url }}/images/2010/01/logo1.png)
 
 La version 3 de [Spring](http://www.springsource.org/) a récemment été annoncée ! Le framework Java EE de la communauté Spring présente des ajouts intéressants par rapports à ses versions précédentes.
 

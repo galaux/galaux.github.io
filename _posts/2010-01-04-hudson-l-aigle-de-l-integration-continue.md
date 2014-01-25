@@ -14,7 +14,7 @@ Hudson fait donc tout cela : il s'installe en quelques clics sous forme de WAR, 
 
 Ces fonctionnalités sont assez communes chez ses concurrents comme [Apache Continuum](http://continuum.apache.org/), [Cruise Control](http://cruisecontrol.sourceforge.net/) ou [IBM Rational Build Forge](http://www-01.ibm.com/software/awdtools/buildforge/). Cependant Hudson dispose d'une fonctionnalité intéressante : il propose de répartir la charge de *build* des projets sur plusieurs machines ce qui est parfois réservé à la version payante voir tout simplement impossible avec d'autres environnements d'intégration continue.
 
-Hudson est aussi capable de présenter différentes métriques des précédents *builds* comme par exemple le temps moyen de *build* (en rouge ceux en erreur) et bien d'autres. [![graph](http://08000linux.com/blogs/files/2009/12/graph.png)](http://08000linux.com/blogs/files/2009/12/graph.png)
+Hudson est aussi capable de présenter différentes métriques des précédents *builds* comme par exemple le temps moyen de *build* (en rouge ceux en erreur) et bien d'autres. [![graph]({{ site.url }}/images/2009/12/graph.png)]({{ site.url }}/images/2009/12/graph.png)
 
 Le dernier atout d'Hudson est sa conception très orientée vers les *plugins*. Même s'il ne supporte nativement que les gestionnaires de version SVN et CVS, des *plugins* existent déjà pour supporter Git, Perforce, ClearCase et bien d'autres ! Ses possibilités ne sont donc encore une fois limitées que par l'imagination de ses utilisateurs.
 

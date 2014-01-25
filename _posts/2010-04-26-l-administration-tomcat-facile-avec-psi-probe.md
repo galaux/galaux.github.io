@@ -27,7 +27,7 @@ PSI-probe gère en effet les utilisateurs en plusieurs rôles ce qui devrait int
 
 Le logiciel est proposé sous forme d'application *web* qui se déploie naturellement sous Tomcat mais aussi sous JBoss de façon triviale. L'ancien site de LambdaProbe propose des [captures d'écran](http://www.lambdaprobe.org/d/screenshots.shtml) et une [démonstration en ligne](http://demo.lambdaprobe.org/probe/index.htm) (d'une ancienne version 1.7) qui donnent une bonne idée des mesures déjà disponibles à l'époque ainsi que de l'interface utilisateur ergonomique, claire et complète que l'on peut retrouver en français. Pour info, PSI-probe nécessite une exécution en environnement privilégié afin de pouvoir administrer les WARs de son serveur ainsi que de l'activation de la console JMX dans la machine virtuelle Java.
 
-[![charts](http://08000linux.com/blogs/files/2010/04/charts.png)](http://08000linux.com/blogs/files/2010/04/charts.png)
+[![charts]({{ site.url }}/images/2010/04/charts.png)]({{ site.url }}/images/2010/04/charts.png)
 
 Comme on a pu le voir au moment de l'inactivité du projet, [le forum](http://www.lambdaprobe.org/forum2/index.jspa), véritable ligne de vie d'un logiciel Open Source, est actif et les demandes d'informations ne restent pas lettre morte. Les [idées de développement futurs](http://code.google.com/p/psi-probe/wiki/DevelopmentRoadmap) ne manquent pas comme par exemple [le support de Tomcat 6](http://code.google.com/p/psi-probe/issues/list?can=2&q=Milestone:2.2) ou les avertissements par email. PSI-probe est le parfait exemple de projet Open Source : basé sur une communauté active et qualifiée, à même de reprendre le projet de bout en bout, et de proposer une réponse pertinente à un besoin souvent exprimé.
 
