@@ -21,6 +21,8 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
+[This resume as PDF](http://www.alaux.net/files/cv/ALAUX%20Guillaume%20-%20Java%20EE%20Developer.pdf) / [Ce CV en PDF](http://www.alaux.net/files/cv/ALAUX%20Guillaume%20-%20CV%20Developpeur%20Java%20EE.pdf)
+
 ## What to remember
 - 33 year old, French, live in Paris
 - Professional software developer (Scala, Java EE)
