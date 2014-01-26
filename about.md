@@ -39,7 +39,7 @@ image:
   - MongoDB's [M102: MongoDB for DBAs](https://education.mongodb.com/courses/10gen/M102/2014_February/about) - 94% - 11/2013
   - MongoDB's [M101J: MongoDB for Java Developers](https://education.mongodb.com/courses/10gen/M101J/2014_January/about) - 95% - 10/2013
 
-## Professional experience
+## Work history
 
 - [BlueKiwi](http://www.bluekiwi-software.com/fr/) - Paris - from 03/2013
   - Developped a Scala backend providing statistics
