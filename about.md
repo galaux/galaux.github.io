@@ -21,7 +21,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Scala_Java_EE_Developer.pdf) / [Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Developpeur_Scala_Java_EE.pdf)
+[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Scala_Java_developer.pdf) / [Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_développeur_Scala_Java.pdf)
 
 ## What to remember
 - 33 years old, French, live in Paris
