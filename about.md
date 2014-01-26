@@ -24,7 +24,7 @@ image:
 [This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_Scala_Java_EE_Developer.pdf) / [Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Developpeur_Scala_Java_EE.pdf)
 
 ## What to remember
-- 33 year old, French, live in Paris
+- 33 years old, French, live in Paris
 - Professional software developer (Scala, Java EE)
 - Also code a lot using mainly Bash and sometimes Python
 - Fond of Scrum and TDD
