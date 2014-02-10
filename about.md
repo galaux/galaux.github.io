@@ -26,7 +26,7 @@ image:
 ## What to remember
 - 33 years old, French, live in Paris
 - Professional software developer (Scala, Java EE)
-- Also code a lot using mainly Bash and sometimes Python
+- Also code a lot using mainly Bash, Python, …
 - Fond of Scrum and TDD
 - Linux/open source enthusiast (I am an [Arch Linux developer](https://www.archlinux.org/developers/#guillaume))
 - Speak English fluently
