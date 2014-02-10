@@ -2,7 +2,7 @@
 layout: page
 permalink: /cv/en/index.html
 title: Guillaume ALAUX
-tagline: Minimal MistGuillaume ALAUX
+tagline: Guillaume ALAUX
 tags: [about, Jekyll, theme, responsive]
 modified: 9-9-2013
 image:
