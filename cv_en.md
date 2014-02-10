@@ -1,6 +1,6 @@
 ---
 layout: page
-permalink: /about/index.html
+permalink: /cv/en/index.html
 title: Guillaume ALAUX
 tagline: Minimal MistGuillaume ALAUX
 tags: [about, Jekyll, theme, responsive]
