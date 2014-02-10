@@ -35,7 +35,7 @@ image:
 - Master degree in Computer Sciences - Tours, France - 2006
 - Passed the following trainings/courses:
   - Coursera's [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun) - 03/2013
-  - Coursera's [Principles of Reactive Programming (Scala)](https://www.coursera.org/course/reactive) - 11/2013
+  - Coursera's [Principles of Reactive Programming](https://www.coursera.org/course/reactive) (Scala) - 11/2013
   - MongoDB's [M102: MongoDB for DBAs](https://education.mongodb.com/courses/10gen/M102/2014_February/about) - 94% - 11/2013
   - MongoDB's [M101J: MongoDB for Java Developers](https://education.mongodb.com/courses/10gen/M101J/2014_January/about) - 95% - 10/2013
 
