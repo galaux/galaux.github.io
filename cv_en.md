@@ -21,7 +21,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Scala_Java_developer.pdf) / [Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_développeur_Scala_Java.pdf)
+[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_Scala_Java_developer.pdf)
 
 ## What to remember
 - 33 years old, French, live in Paris
@@ -32,44 +32,44 @@ image:
 - Speak English fluently
 
 ## Qualifications and trainings
-- Master degree in Computer Sciences - Tours, France - 2006
+- Master degree in Computer Sciences – Tours, France – 2006
 - Passed the following trainings/courses:
-  - Coursera's [Functional Programming Principles in Scala](https://www.coursera.org/course/progfun) - 03/2013
-  - Coursera's [Principles of Reactive Programming](https://www.coursera.org/course/reactive) (Scala) - 11/2013
-  - MongoDB's [M102: MongoDB for DBAs](https://education.mongodb.com/courses/10gen/M102/2014_February/about) - 94% - 11/2013
-  - MongoDB's [M101J: MongoDB for Java Developers](https://education.mongodb.com/courses/10gen/M101J/2014_January/about) - 95% - 10/2013
+  - [Coursera's *Functional Programming Principles in Scala*](https://www.coursera.org/course/progfun) – 03/2013
+  - [Coursera's *Principles of Reactive Programming*](https://www.coursera.org/course/reactive) (Scala) – 11/2013
+  - [MongoDB's *M102: MongoDB for DBAs*](https://education.mongodb.com/courses/10gen/M102/2014_February/about) – 94% – 11/2013
+  - [MongoDB's *M101J: MongoDB for Java Developers*](https://education.mongodb.com/courses/10gen/M101J/2014_January/about) – 95% – 10/2013
 
 ## Work history
 
-- [BlueKiwi](http://www.bluekiwi-software.com/fr/) - Paris - from 03/2013
+- [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013
   - Developped a Scala backend providing statistics
   - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
   - Improved a social recommendation backend
   - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
-Personal training - from 08/2012 to 01/2013 (see [Other IT experience]({{ site.url }}/cv/en/#other-it-experience))
+Personal training – from 08/2012 to 01/2013 (see [Other IT experience]({{ site.url }}/cv/en/#other-it-experience))
 
-- [Société Générale](http://societegenerale.fr/) - Paris - from 10/2011 to 09/2012
+- [Société Générale](http://societegenerale.fr/) – Paris – from 10/2011 to 09/2012
   - Developped a set of complex marketing websites
   - Java EE, Wicket, Spring, JMS, Maven, SVN, Eclipse, Scrum
 
-- [Linagora](http://www.linagora.com/) - Paris - from 10/2009 to 06/2011
-  - Developped a JavaScript/XUL connector for the [OBM email/calendar solution](http://obm.org/)
+- [Linagora](http://www.linagora.com/) – Paris – from 10/2009 to 06/2011
+  - Developped a JavaScript/XUL connector for the [OBM email/calendar solution](http://www.obm.org/)
   - Provided level 3 support for a wide range of open source application and frameworks (Tomcat, …) on Linux
   - Provided support and advised companies using open source software regarding configuration, deployment, migrations, evolutions, bug corrections on Linux
   - Wrote technological surveys on open source Java solutions regarding clients requirements
-  - Developed an open source Python application for simple server administration tasks on Linux
+  - Developed [an open source Python application](https://github.com/bdonnette/PACHA) for simple server administration tasks on Linux
 
-- [Sungard](http://www.sungard.com/) - Sydney - from 12/2008 to 06/2009
+- [Sungard](http://www.sungard.com/) – Sydney – from 12/2008 to 06/2009
   - Integrated a back-office software onto a client's information system
   - Developped a graphical user interface using the dedicated Python framework
 
-- [Apside Top](http://www.apside.fr) (Service Company) - Tours, France - from 03/2007 to 09/2008
+- [Apside Top](http://www.apside.fr) (Service Company) – Tours, France – from 03/2007 to 09/2008
   - Developped Java web applications
   - Java EE 5, JSF, JPA, JDBC
   - Web services, SOAP, XML/HTTP, Oracle, Hibernate, JUnit
 
 ## Other IT experience
-- Self-training - from 08/2012 to 01/2013:
+- Self-training – from 08/2012 to 01/2013:
   - Created and developped a Java EE web application for training purpose
     - GWT, Spring, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra (Hector), Thrift, Google ProtoBuf, Intellij IDEA
     - Sources available on [Github.com (galaux/DiosMio)](https://github.com/galaux/diosmio)
@@ -77,8 +77,8 @@ Personal training - from 08/2012 to 01/2013 (see [Other IT experience]({{ site.u
     - Play! 2, Cassandra (Hector et Astyanax)
     - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
 
-- Since 08/2010 - [Archlinux](http://www.archlinux.org/) packager
-  - Package management for Arch Linux
+- Since 08/2010 – [Archlinux](http://www.archlinux.org/) packager
+  - Package management for [Archlinux](http://www.archlinux.org/)
   - Shell scripting for software/libraries integration and compilation
   - Bugs reporting/fixing and community feedback
 
