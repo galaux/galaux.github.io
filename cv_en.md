@@ -77,7 +77,7 @@ Personal training - from 08/2012 to 01/2013 (see [Other IT experience]({{ site.u
     - Play! 2, Cassandra (Hector et Astyanax)
     - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
 
-- Since August 2010 - [Archlinux](http://www.archlinux.org/) packager
+- Since 08/2010 - [Archlinux](http://www.archlinux.org/) packager
   - Package management for Arch Linux
   - Shell scripting for software/libraries integration and compilation
   - Bugs reporting/fixing and community feedback
