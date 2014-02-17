@@ -48,7 +48,9 @@ image:
   - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
   - Apporté des évolutions à un backend de recommandation sociale
   - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
-Formation personnelle – de 08/2012 à 01/2013 (voir [Autres expériences informatiques]({{ site.url }}/cv/fr/#autres-expriences-informatiques))
+
+- Formation personnelle – de 08/2012 à 01/2013
+  - voir [Autres expériences informatiques]({{ site.url }}/cv/fr/#autres-expriences-informatiques)
 
 - [Société Générale](http://societegenerale.fr/) – Paris – de 10/2011 à 09/2012
   - Développé un ensemble de portails marketing
