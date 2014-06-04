@@ -36,8 +36,8 @@ image:
 
 - Master 2 recherche (DEA) en informatique – Tours, France – 2006
 - Formations suivies :
-  - [Coursera *Functional Programming Principles in Scala*](https://www.coursera.org/course/progfun) – 03/2013
-  - [Coursera *Principles of Reactive Programming*](https://www.coursera.org/course/reactive) (Scala) – 11/2013
+  - [Coursera *Functional Programming Principles in Scala*](https://www.coursera.org/course/progfun) – 100% – 03/2013
+  - [Coursera *Principles of Reactive Programming*](https://www.coursera.org/course/reactive) (Scala) – 100% – 11/2013
   - [MongoDB *M102: MongoDB for DBAs*](https://education.mongodb.com/courses/10gen/M102/2014_February/about) – 94% – 11/2013
   - [MongoDB *M101J: MongoDB for Java Developers*](https://education.mongodb.com/courses/10gen/M101J/2014_January/about) – 95% – 10/2013
 
