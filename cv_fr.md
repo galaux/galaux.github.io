@@ -36,7 +36,7 @@ image:
 
 - Master 2 recherche (DEA) en informatique – Tours, France – 2006
 - Formations suivies :
-  - [Coursera's *Algorithms: Design and Analysis, Part 1*](https://www.coursera.org/course/algo) – 82% – 06/2014
+  - [Coursera *Algorithms: Design and Analysis, Part 1*](https://www.coursera.org/course/algo) – 82% – 06/2014
   - [Coursera *Functional Programming Principles in Scala*](https://www.coursera.org/course/progfun) – 100% – 03/2013
   - [Coursera *Principles of Reactive Programming*](https://www.coursera.org/course/reactive) (Scala) – 100% – 11/2013
   - [MongoDB *M102: MongoDB for DBAs*](https://education.mongodb.com/courses/10gen/M102/2014_February/about) – 94% – 11/2013
