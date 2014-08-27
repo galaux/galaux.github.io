@@ -80,8 +80,8 @@ image:
     - Play! 2, Cassandra (Hector et Astyanax)
     - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
 
-- Since 08/2010 – [Archlinux](http://www.archlinux.org/) packager
-  - Package management for [Archlinux](http://www.archlinux.org/)
+- Since 08/2010 – [Arch Linux](http://www.archlinux.org/) packager
+  - Package management for [Arch Linux](http://www.archlinux.org/)
   - Shell scripting for software/libraries integration and compilation
   - Bugs reporting/fixing and community feedback
 
