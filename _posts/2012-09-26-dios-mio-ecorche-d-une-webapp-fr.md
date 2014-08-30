@@ -16,23 +16,24 @@ Cet article est une présentation générale de l'application. Il introduira aus
 
 Dios Mio est une webapp [GWT](https://developers.google.com/web-toolkit/) [Spring](http://www.springsource.org/). Son coeur est constitué d'une couche service qui à son tour repose sur une couche [DAO](http://fr.wikipedia.org/wiki/Objet_d'acc%C3%A8s_aux_donn%C3%A9es) qui sont toutes les deux des beans Spring.
 
-                                               Webapp
-                                     +-----------------------+
-                                     | +-------------+ +---+ |
-                                     | |     GWT     | |   | |
-                                     | +-------------+ | S | |
-                                     |        |        | P | |
-                     +-------------+ | +-------------+ | R | |
-                     |     CLI     |-|-|  Services   | | I | |
-                     +-------------+ | +-------------+ | N | |
-                                     |        |        | G | |
-                                     | +-------------+ |   | |
-                                     | |  DAO (JPA)  | |   | |
-                                     | +-------------+ +---+ |
-                                     +--------|--------------+
-                                           -------
-                                         ( BD (H2) )
-                                           -------
+{% highlight bash %} Webapp
+                                ┏━━━━━━━━━━━━━━━━━━━━━━━┓
+                                ┃ ┌─────────────┐ ┌───┐ ┃
+                                ┃ │     GWT     │ │   │ ┃
+                                ┃ └──────┬──────┘ │ S │ ┃
+                                ┃        │        │ P │ ┃
+                ┌─────────────┐ ┃ ┌──────┴──────┐ │ R │ ┃
+                │     CLI     ├─╂─┤  Services   │ │ I │ ┃
+                └─────────────┘ ┃ └──────┬──────┘ │ N │ ┃
+                                ┃        │        │ G │ ┃
+                                ┃ ┌──────┴──────┐ │   │ ┃
+                                ┃ │  DAO (JPA)  │ │   │ ┃
+                                ┃ └──────┬──────┘ └───┘ ┃
+                                ┗━━━━━━━━┿━━━━━━━━━━━━━━┛
+                                    ╭────┴────╮
+                                    │ BD (H2) │
+                                    ╰─────────╯
+{% endhighlight %}
 
 La couche DAO utilisait initialement [Hibernate](http://www.hibernate.org/) et persistait les entités dans une base [Cassandra](http://cassandra.apache.org/). Cependant afin de conserver la possibilité d'utiliser une autre implémentation, Hibernate a été remplacé par du pur [JPA](http://fr.wikipedia.org/wiki/Java_Persistence_API). De même l'implémentation est maintenant [OpenJPA](http://openjpa.apache.org/) et la base de donnée utilisée est [H2](http://www.h2database.com/html/main.html) qui apporte la facilité de ne pas avoir à lancer de base avant de démarrer l'application.
 
