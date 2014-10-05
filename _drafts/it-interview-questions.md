@@ -10,6 +10,8 @@ tags: [java]
 
 - Cite all [HTTP method](https://tools.ietf.org/html/rfc7231#section-4.3) you know
   - [GET](https://tools.ietf.org/html/rfc7231#section-4.3.1), [HEAD](https://tools.ietf.org/html/rfc7231#section-4.3.2), [POST](https://tools.ietf.org/html/rfc7231#section-4.3.3), [PUT](https://tools.ietf.org/html/rfc7231#section-4.3.4), [DELETE](https://tools.ietf.org/html/rfc7231#section-4.3.5), [CONNECT](https://tools.ietf.org/html/rfc7231#section-4.3.6), [OPTIONS](https://tools.ietf.org/html/rfc7231#section-4.3.7), [TRACE](https://tools.ietf.org/html/rfc7231#section-4.3.8)
+- What is the difference between POST and PUT?
+  - The target resource in a POST request is intended to handle the enclosed representation according to the resource's own semantics, whereas the enclosed representation in a PUT request is defined as replacing the state of the target resource
 - Explain what happens when an HTTP GET query is issued?
 - What is a [_safe_ HTTP method](https://tools.ietf.org/html/rfc7231#section-4.2.1)?
   - Request methods are considered _safe_ if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource. Likewise, reasonable use of a safe method is not expected to cause any harm, loss of property, or unusual burden on the origin server.
