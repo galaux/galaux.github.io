@@ -8,8 +8,8 @@ tags: [java]
 
 ## HTTP
 
-- Cite all HTTP method you know
-  - GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE
+- Cite all [HTTP method](https://tools.ietf.org/html/rfc7231#section-4.3) you know
+  - [GET](https://tools.ietf.org/html/rfc7231#section-4.3.1), [HEAD](https://tools.ietf.org/html/rfc7231#section-4.3.2), [POST](https://tools.ietf.org/html/rfc7231#section-4.3.3), [PUT](https://tools.ietf.org/html/rfc7231#section-4.3.4), [DELETE](https://tools.ietf.org/html/rfc7231#section-4.3.5), [CONNECT](https://tools.ietf.org/html/rfc7231#section-4.3.6), [OPTIONS](https://tools.ietf.org/html/rfc7231#section-4.3.7), [TRACE](https://tools.ietf.org/html/rfc7231#section-4.3.8)
 - Explain what happens when an HTTP GET query is issued?
 - What is a [_safe_ HTTP method](https://tools.ietf.org/html/rfc7231#section-4.2.1)?
   - Request methods are considered _safe_ if their defined semantics are essentially read-only; i.e., the client does not request, and does not expect, any state change on the origin server as a result of applying a safe method to a target resource. Likewise, reasonable use of a safe method is not expected to cause any harm, loss of property, or unusual burden on the origin server.
@@ -20,7 +20,7 @@ tags: [java]
 - Which HTTP methods are idempotents?
   - PUT, DELETE, and safe request methods
 - Thus, what is the difference in how GET and POST can be treated by a web proxy?
-  - As GET is idempotent, it can be cached by proxies. POST cannot.
+  - GET (and HEAD) can be cached by proxies. POST (and others) cannot.
 - What does REST mean and how does work?
   - REpresentational State Transfer
   - TODO
