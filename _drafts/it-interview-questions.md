@@ -3,7 +3,6 @@ layout: post
 title: IT Job interview questions
 description: "Questions I was asked during IT jobs interviews"
 category: articles
-published: false
 tags: [java]
 ---
 
@@ -23,7 +22,7 @@ tags: [java]
 - Thus, what is the difference in how GET and POST can be treated by a web proxy?
   - As GET is idempotent, it can be cached by proxies. POST cannot.
 - What does REST mean and how does work?
-  - __RE__presentational __S__tate __T__ransfer
+  - REpresentational State Transfer
   - TODO
 - What does it mean for a web application to be stateless?
 - If an application is stateless, how can we handle sessions?
@@ -32,15 +31,15 @@ tags: [java]
 ## Database
 
 - What does [ACID](http://en.wikipedia.org/wiki/ACID) mean?
-  - __A__tomicity: requires that each transaction be "all or nothing": if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged
-  - __C__onsistency: ensures that any transaction will bring the database from one valid state to another. Any data written to the database must be valid according to all defined rules
-  - __I__solation: ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially
-  - __D__urability: once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors
+  - __Atomicity__: requires that each transaction be "all or nothing": if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged
+  - __Consistency__: ensures that any transaction will bring the database from one valid state to another. Any data written to the database must be valid according to all defined rules
+  - __Isolation__: ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially
+  - __Durability__: once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors
 - What does the [CAP](http://en.wikipedia.org/wiki/CAP_theorem) mean?
   - It is impossible for a distributed computer system to simultaneously provide all three of the following guarantees:
-    - __C__onsistency: all nodes see the same data at the same time
-    - __A__vailability: a guarantee that every request receives a response about whether it was successful or failed
-    - __P__artition tolerance: the system continues to operate despite arbitrary message loss or failure of part of the system
+    - __Consistency__: all nodes see the same data at the same time
+    - __Availability__: a guarantee that every request receives a response about whether it was successful or failed
+    - __Partition tolerance__: the system continues to operate despite arbitrary message loss or failure of part of the system
 
 ## Programming
 
