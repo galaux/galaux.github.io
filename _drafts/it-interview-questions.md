@@ -50,31 +50,31 @@ tags: [java]
 - What are the issues multi-threading programs can face?
   - race condition
   - deadlock
-
-- Citez tous les langages objet que vous connaissez
+- List all object languages you know
   - C++, Java, Javascript, Perl, Python, Ruby and PHP
-- Citez tous les langages fonctionnels que vous connaissez
-- Quels sont les avantages d'un langage fonctionnel sur un langage non fonctionnel?
-- Y-a-t'il des choses qu'on ne peut faire qu'avec un langage fonctionnel?
-  - Non, les langages fonctionnels apportent juste une certaines flexibilité dans certains domaines
-- Est-ce que JS est un langage fonctionnel?
-- Quelle est la différence entre Scala et Haskell
-  - Haskell: pas de mutable, pas d'objet, les typeclasses de base, …
-- quel est le problème d'un appel récursif?
-  - Possibilité de dépassement de pile d'exécution (__StackOverflowError__)
-- quelle est la limite de profondeur du StackOverflowError sur une JVM?
+- List all functional languages you know
+- What are the advantages of a functional language over a non-functional language?
+- Are there things that can only be done with a functional language?
+  - No, functional languages just bring some flexibility in some fields
+- What are the differences between Scala and Haskell?
+  - Haskell: no mutable, no object, native typeclasses
+- What issue can recursive function raise?
+  - Exceed the execution stack limit (StackOverflowError)
+- What is the limit of a StackOverflowError on a JVM?
   - It depends on the amount of virtual memory allocated to the stack (which is tuned with -Xss)
-- comment éviter un StackOverflowError?
-  - Coder la méthode pour qu'elle soit tail-recursive
-  - si tu ne peux pas etre tail recursive => trampoline ou mieux : free monad
+- How do you avoid StackOverflowError?
+  - Make your function tail-recursive
+  - Use a trampoline
+  - Use a free monad
 
 ## General Architecture
 
-- Expliquez-moi AJAX et comment ça fonctionne
-- Pareil pour CSRF
-- Qu'est-ce que MVC? Faites un dessin. Est-ce que je peux avoir un lien direct entre modèle et vue?
-- qu'est ce qu'une resource HTTP
+- What does AJAX mean and how does it work?
+- What does CSRF mean and how does it work?
+- Explain MVC
+- What is a web resource?
 
-- Écrivez le code du jeu du "fizz buzz" (pour tous les nombres de 1 à 100, s'il est multiple de 3 dites "fizz" et s'il est multiple de 5 dites "fuzz" et s'il est les 2 dites "fizzbuzz")
-- Comment est implémentée "List" en Scala?
-- Écrivez-moi une classe "List" dans le (pseudo)langage que vous voulez
+- Write the code of the "fizz buzz" game (For all numbers from 1 to 100, if it is a multiple of 3, say "fizz", if it is a multiple of 5, say "buzz". If it both, say "fizzbuzz")
+- How is "List" implemented in Scala?
+  - A singly linked list
+- Rewrite class "List" in pseudo-code
