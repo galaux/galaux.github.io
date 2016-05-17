@@ -43,7 +43,7 @@ image:
 ## Work history
 
 - [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013
-  - Developped a Scala backend providing statistics
+  - Developed a Scala backend providing statistics
   - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
   - Improved a social recommendation backend
   - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
@@ -52,11 +52,11 @@ image:
   - See [Other IT experience]({{ site.url }}/cv/en/#other-it-experience)
 
 - [Société Générale](http://societegenerale.fr/) – Paris – from 10/2011 to 09/2012
-  - Developped a set of complex marketing websites
+  - Developed a set of complex marketing websites
   - Java EE, Wicket, Spring, JMS, Maven, SVN, Eclipse, Scrum
 
 - [Linagora](http://www.linagora.com/) – Paris – from 10/2009 to 06/2011
-  - Developped a JavaScript/XUL connector for the [OBM email/calendar solution](http://www.obm.org/)
+  - Developed a JavaScript/XUL connector for the [OBM email/calendar solution](http://www.obm.org/)
   - Provided level 3 support for a wide range of open source application and frameworks (Tomcat, …) on Linux
   - Provided support and advised companies using open source software regarding configuration, deployment, migrations, evolutions, bug corrections on Linux
   - Wrote technological surveys on open source Java solutions regarding clients requirements
@@ -64,19 +64,19 @@ image:
 
 - [Sungard](http://www.sungard.com/) – Sydney – from 12/2008 to 06/2009
   - Integrated a back-office software onto a client's information system
-  - Developped a graphical user interface using the dedicated Python framework
+  - Developed a graphical user interface using the dedicated Python framework
 
 - [Apside Top](http://www.apside.fr) (Service Company) – Tours, France – from 03/2007 to 09/2008
-  - Developped Java web applications
+  - Developed Java web applications
   - Java EE 5, JSF, JPA, JDBC
   - Web services, SOAP, XML/HTTP, Oracle, Hibernate, JUnit
 
 ## Other IT experience
 - Self-training – from 08/2012 to 01/2013:
-  - Created and developped a Java EE web application for training purpose
+  - Created and developed a Java EE web application for training purpose
     - GWT, Spring, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra (Hector), Thrift, Google ProtoBuf, Intellij IDEA
     - Sources available on [Github.com (galaux/DiosMio)](https://github.com/galaux/diosmio)
-  - Created and developped a Play! webapp
+  - Created and developed a Play! webapp
     - Play! 2, Cassandra (Hector et Astyanax)
     - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
 
