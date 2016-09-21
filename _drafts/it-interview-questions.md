@@ -33,15 +33,21 @@ tags: [java]
 ## Database
 
 - What does [ACID](http://en.wikipedia.org/wiki/ACID) mean?
+  ACID is a set of properties of database transactions where:
   - __Atomicity__: requires that each transaction be "all or nothing": if one part of the transaction fails, the entire transaction fails, and the database state is left unchanged
-  - __Consistency__: ensures that any transaction will bring the database from one valid state to another. Any data written to the database must be valid according to all defined rules
+  - __Consistency__ (watch-out: different from CAP's Consistency): ensures that any transaction will bring the database from one valid state to another. Any data written to the database must be valid according to all defined rules
   - __Isolation__: ensures that the concurrent execution of transactions results in a system state that would be obtained if transactions were executed serially
   - __Durability__: once a transaction has been committed, it will remain so, even in the event of power loss, crashes, or errors
 - What does the [CAP](http://en.wikipedia.org/wiki/CAP_theorem) mean?
-  - It is impossible for a distributed computer system to simultaneously provide all three of the following guarantees:
-    - __Consistency__: all nodes see the same data at the same time
-    - __Availability__: a guarantee that every request receives a response about whether it was successful or failed
-    - __Partition tolerance__: the system continues to operate despite arbitrary message loss or failure of part of the system
+  - It is impossible for a distributed shared-data system to simultaneously
+    provide all three of the following guarantees:
+    - __Consistency__ (watch-out: different from ACID's Consistency): data is
+      consistent accross all nodes, ie: at a given time, all nodes see the same
+      version of the data
+    - __Availability__: every node (if not failed) always executes queries and
+      return a response (a server error or timeout is not a valid response)
+    - __Partition tolerance__: the system continues to operate despite
+      arbitrary message loss or failure of part of the system
 
 ## Programming
 
