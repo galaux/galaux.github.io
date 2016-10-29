@@ -26,26 +26,26 @@ image:
 ## What to remember
 
 - 35 years old, French, lives in Paris
-- Data backend developer and ops (Scala, Clojure, Java EE)
+- Data engineer, backend developer and ops (Scala, Clojure, Java EE)
 - Also codes a lot using mainly Bash, Python, …
 - Fond of Scrum and TDD
-- Linux/open source enthusiast (I am an [Arch Linux developer](https://www.archlinux.org/developers/#guillaume))
+- Linux/open source enthusiast ([Arch Linux packager](https://www.archlinux.org/developers/#guillaume))
 - Speaks English fluently
 
 ## Qualifications and trainings
 
 - Master degree in Computer Sciences – Tours, France – 2006
 - Passed the following trainings/courses:
-  - [Coursera’s *Parallel programming*](https://www.coursera.org/learn/parprog1) (Scala) – 100% – 07/2016
-  - [Coursera’s *Algorithms: Design and Analysis, Part 1*](https://www.coursera.org/learn/algorithm-design-analysis) – 82% – 06/2014
-  - [Coursera’s *Functional Programming Principles in Scala*](https://www.coursera.org/learn/progfun1) – 100% – 03/2013
-  - Coursera’s *Principles of Reactive Programming* (Scala, Akka) – 100% – 11/2013
-  - [MongoDB’s *M102: MongoDB for DBAs*](https://university.mongodb.com/courses/M102/about) – 94% – 11/2013
-  - [MongoDB’s *M101J: MongoDB for Java Developers*](https://university.mongodb.com/courses/M101J/about) – 95% – 10/2013
+  - 07/2016 – [Coursera’s *Parallel programming*](https://www.coursera.org/learn/parprog1) (Scala) – 100%
+  - 06/2014 – [Coursera’s *Algorithms: Design and Analysis, Part 1*](https://www.coursera.org/learn/algorithm-design-analysis) – 82%
+  - 03/2013 – [Coursera’s *Functional Programming Principles in Scala*](https://www.coursera.org/learn/progfun1) – 100%
+  - 11/2013 – Coursera’s *Principles of Reactive Programming* (Scala, Akka) – 100%
+  - 11/2013 – [MongoDB’s *M102: MongoDB for DBAs*](https://university.mongodb.com/courses/M102/about) – 94%
+  - 10/2013 – [MongoDB’s *M101J: MongoDB for Java Developers*](https://university.mongodb.com/courses/M101J/about) – 95%
 
 ## Work history
 
-- [S4M](http://www.s4m.io/) – Paris – since 01/2015
+- Data engineer at [S4M](http://www.s4m.io/) – Paris – since 01/2015
   - Storm topology in Clojure reading from and to Kafka in Avro
   - Full integration testing
   - Developed several REST micro services in Clojure
@@ -53,13 +53,13 @@ image:
   - Setup a continuous integration infrastructure (GitLab-CI, Docker, Nexus)
   - Helped write [Chef Cookbook available in Open Source](https://gitlab.com/s4m-chef-repositories/storm-platform)
 
-- [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013 to 12/2014
+- Backend Scala engineer at [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013 to 12/2014
   - Developed a Scala micro service backend providing statistics
   - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
   - Improved a social recommendation backend
   - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
 
-- Personal training – from 08/2012 to 01/2013
+- Personal training in Java EE – from 08/2012 to 01/2013
   - Created and developed a Java EE web application for training purpose
     - GWT, Spring, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra (Hector), Thrift, Google ProtoBuf, Intellij IDEA
     - Sources available on [Github.com (galaux/DiosMio)](https://github.com/galaux/diosmio)
@@ -67,22 +67,22 @@ image:
     - Play! 2, Cassandra (Hector et Astyanax)
     - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
 
-- [Société Générale](http://societegenerale.fr/) – Paris – from 10/2011 to 09/2012
+- Java EE developer at [Société Générale](http://societegenerale.fr/) – Paris – from 10/2011 to 09/2012
   - Developed a set of complex marketing websites
   - Java EE, Wicket, Spring, JMS, Maven, SVN, Eclipse, Scrum
 
-- [Linagora](http://www.linagora.com/) – Paris – from 10/2009 to 06/2011
+- Open source Python and JavaScript developer at [Linagora](http://www.linagora.com/) – Paris – from 10/2009 to 06/2011
   - Developed a JavaScript/XUL connector for the [OBM email/calendar solution](http://www.obm.org/)
   - Provided level 3 support for a wide range of open source application and frameworks (Tomcat, …) on Linux
   - Provided support and advised companies using open source software regarding configuration, deployment, migrations, evolutions, bug corrections on Linux
   - Wrote technological surveys on open source Java solutions regarding clients requirements
   - Developed [an open source Python application](https://github.com/bdonnette/PACHA) for simple server administration tasks on Linux
 
-- [Sungard](http://www.sungard.com/) – Sydney – from 12/2008 to 06/2009
+- Python integrator at [Sungard](http://www.sungard.com/) – Sydney – from 12/2008 to 06/2009
   - Integrated a back-office software onto a client’s information system
   - Developed a graphical user interface using the dedicated Python framework
 
-- [Apside Top](http://www.apside.fr) (Service Company) – Tours, France – from 03/2007 to 09/2008
+- Java EE developer at [Apside Top](http://www.apside.fr) (Service Company) – Tours, France – from 03/2007 to 09/2008
   - Developed Java web applications
   - Java EE 5, JSF, JPA, JDBC
   - Web services, SOAP, XML/HTTP, Oracle, Hibernate, JUnit
