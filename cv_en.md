@@ -21,7 +21,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_data_backend_developer_Scala_Clojure_Java.pdf)
+[This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_data_engineer_EN.pdf)
 
 ## What to remember
 
@@ -48,10 +48,10 @@ image:
 - Data engineer at [S4M](http://www.s4m.io/) – Paris – since 01/2015
   - Storm topology in Clojure reading from and to Kafka in Avro
   - Full integration testing
-  - Developed several REST micro services in Clojure
+  - Developed REST micro services in Clojure
   - Wrote Docker containers for micro services
   - Setup a continuous integration infrastructure (GitLab-CI, Docker, Nexus)
-  - Helped write [Chef Cookbook available in Open Source](https://gitlab.com/s4m-chef-repositories/storm-platform)
+  - Wrote [Chef Cookbook available in Open Source](https://gitlab.com/s4m-chef-repositories/storm-platform)
 
 - Backend Scala engineer at [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013 to 12/2014
   - Developed a Scala micro service backend providing statistics

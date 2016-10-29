@@ -21,7 +21,7 @@ image:
 </div>
 </section><!-- /#table-of-contents -->
 
-[Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_developpeur_backend_data_Scala_Clojure_Java.pdf)
+[Ce CV en PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_data_engineer_FR.pdf)
 
 ## À retenir
 
