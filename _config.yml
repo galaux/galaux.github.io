@@ -31,8 +31,6 @@ bing_verify:
 # Links to include in top navigation
 # For external links add external: true
 links:
-  - title: CV (Fr)
-    url: /cv/fr/
   - title: CV (En)
     url: /cv/en/
   - title: Articles
