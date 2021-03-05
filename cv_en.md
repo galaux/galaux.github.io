@@ -3,8 +3,8 @@ layout: page
 permalink: /cv/en/index.html
 title: Guillaume ALAUX
 tagline: Guillaume ALAUX
-tags: [cv, en, scala, java]
-modified: 9-9-2013
+tags: [cv, en, clojure, nodejs, typescript, go, rust, backend, aws, terraform, ansible]
+modified: 05-03-2021
 image:
   feature: texture-feature-02.jpg
   credit: Texture Lovers
@@ -23,16 +23,36 @@ image:
 
 [This resume as PDF]({{ site.url }}/assets/files/ALAUX_Guillaume_CV_data_engineer_EN.pdf)
 
-## What to remember
+## Profile
 
-- 35 years old, French, lives in Paris
-- Data engineer, backend developer and ops (Scala, Clojure, Java EE)
-- Also codes a lot using mainly Bash, Python, …
-- Fond of Scrum and TDD
-- Linux/open source enthusiast ([Arch Linux packager](https://www.archlinux.org/developers/#guillaume))
-- Speaks English fluently
+I am a backend and data engineer with ops skills and some interest in front-end
+development. I am able to understand a general computer science problem with
+potential scalability issues, design and discuss solutions potentially
+involving distributed systems and databases and implement them in a
+professional fashion.
 
-## Qualifications and trainings
+This usually means:
+
+- developing proof of concepts
+- setting up initial projects, CI/CD, …
+- coding features with their different test families
+- writing deployment code for a cloud infrastructure
+- incrementally adding and fixing the initial result
+- reporting and communicating on work done and to be done
+
+My daily work habits include ensuring I write simple clear and efficient tested
+code, version and document it, set or improve the team's tooling regarding code
+quality, automatic delivery and deployment. I also check the software I work on
+include reporting and alerting and I regularly troubleshoot and fix problems
+that arise in live environments. Depending on my position in the team I pair
+with team-mates, submit/review code or simply try to learn as much as possible
+or improve knowledge sharing.
+
+I am interested in Clojure, TypeScript/Node.js, Go, Rust backend/data long-
+term projects and work as a contractor. I do not wish to work with Java nor
+Scala anymore.
+
+## Education
 
 - Master degree in Computer Sciences – Tours, France – 2006
 - Passed the following trainings/courses:
@@ -43,58 +63,80 @@ image:
   - 11/2013 – [MongoDB’s *M102: MongoDB for DBAs*](https://university.mongodb.com/courses/M102/about) – 94%
   - 10/2013 – [MongoDB’s *M101J: MongoDB for Java Developers*](https://university.mongodb.com/courses/M101J/about) – 95%
 
-## Work history
+## Experience
 
-- Data engineer at [S4M](http://www.s4m.io/) – Paris – since 01/2015
-  - Storm topology in Clojure reading from and to Kafka in Avro
-  - Full integration testing
-  - Developed REST micro services in Clojure
-  - Wrote Docker containers for micro services
-  - Setup a continuous integration infrastructure (GitLab-CI, Docker, Nexus)
-  - Wrote [Chef Cookbook available in Open Source](https://gitlab.com/s4m-chef-repositories/storm-platform)
+### Personal training
 
-- Backend Scala engineer at [BlueKiwi](http://www.bluekiwi-software.com/fr/) – Paris – from 03/2013 to 12/2014
-  - Developed a Scala micro service backend providing statistics
-  - Play! 2.0, Casbah Mongo driver, MongoDB, sbt, Git, Vim, TDD, Linux
-  - Improved a social recommendation backend
-  - Java EE, Spring Batch, Maven, Mahout, Git, Vim, Linux
+At home \| 11/2020 – Present
 
-- Personal training in Java EE – from 08/2012 to 01/2013
-  - Created and developed a Java EE web application for training purpose
-    - GWT, Spring, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra (Hector), Thrift, Google ProtoBuf, Intellij IDEA
-    - Sources available on [Github.com (galaux/DiosMio)](https://github.com/galaux/diosmio)
-  - Created and developed a Play! webapp
-    - Play! 2, Cassandra (Hector et Astyanax)
-    - Sources available on [Github.com (galaux/ticketex)](https://github.com/galaux/ticketex)
+- Node.js/TypeScript, GraphQL, React
+- Ansible, Terraform, AWS
 
-- Java EE developer at [Société Générale](http://societegenerale.fr/) – Paris – from 10/2011 to 09/2012
-  - Developed a set of complex marketing websites
-  - Java EE, Wicket, Spring, JMS, Maven, SVN, Eclipse, Scrum
+### Backend engineer in Clojure then TypeScript/Node.js
 
-- Open source Python and JavaScript developer at [Linagora](http://www.linagora.com/) – Paris – from 10/2009 to 06/2011
-  - Developed a JavaScript/XUL connector for the [OBM email/calendar solution](http://www.obm.org/)
-  - Provided level 3 support for a wide range of open source application and frameworks (Tomcat, …) on Linux
-  - Provided support and advised companies using open source software regarding configuration, deployment, migrations, evolutions, bug corrections on Linux
-  - Wrote technological surveys on open source Java solutions regarding clients requirements
-  - Developed [an open source Python application](https://github.com/bdonnette/PACHA) for simple server administration tasks on Linux
+[Drest](https://drest.com/) (online fashion industry) – remote \| 01/2019 – 11/2020
 
-- Python integrator at [Sungard](http://www.sungard.com/) – Sydney – from 12/2008 to 06/2009
-  - Integrated a back-office software onto a client’s information system
-  - Developed a graphical user interface using the dedicated Python framework
+- As Backend Chapter Lead: TypeScript/Node.js, GraphQL, SQL, AWS (Lambda,
+  DynamoDB, RDS, KMS, SQS), Terraform, Go
+- As Clojure developer working with Cognitect: Clojure/ClojureScript, Datomic,
+  AWS
 
-- Java EE developer at [Apside Top](http://www.apside.fr) (Service Company) – Tours, France – from 03/2007 to 09/2008
-  - Developed Java web applications
-  - Java EE 5, JSF, JPA, JDBC
-  - Web services, SOAP, XML/HTTP, Oracle, Hibernate, JUnit
+### Backend/data engineer in Clojure
 
-## Other IT experience
+[Adikteev](https://www.adikteev.com/) (Online ad business) – Paris, France \| 10/2016 – 01/2019
 
-- Since 08/2010 – [Arch Linux](http://www.archlinux.org/) packager
-  - Package management for [Arch Linux](http://www.archlinux.org/)
-  - Shell scripting for software/libraries integration and compilation
-  - Bugs reporting/fixing and community feedback
+- Ad server application and streaming jobs using Clojure, Datomic, Cassandra, Kafka, Samza
+- Migration of a Scala application to Clojure/Datomic
 
-## Misc
+### Backend/data engineer in Clojure
 
-- Fond of middle-age/renaissance history and sport
-- Trained in the French Air Force between 2002 and 2004 to become a weapon system officer
+[S4M](https://www.s4m.io/) – Paris, France \| 01/2015 – 10/2016
+
+- Storm topology in Clojure reading from and to Kafka in Avro
+- REST micro services
+- Docker containers, Chef cookbooks for micro services, CI
+
+### Backend/Data engineer in Scala
+
+[BlueKiwi](https://www.crunchbase.com/organization/bluekiwi) (Social Network) – Paris, France \| 03/2013 – 12/2014
+
+- Event driven micro service for statistics backend in Scala Play!, MongoDB
+
+### Personal training in Java EE
+
+At home \| 09/2012 – 01/2013
+
+- Java EE, JMX, RMI, OpenJPA, Hibernate, H2, Cassandra, Thrift, ProtoBuf
+- Play! Cassandra webapp
+
+### Java developer
+
+[Société Générale](https://societegenerale.fr/) (French Bank) – Paris, France \| 10/2011 – 09/2012
+
+- Marketing websites in Java EE, Wicket, Spring, JMS, Maven, SVN, Eclipse, Scrum
+
+### Python/JS developer and Open Source level 3 support
+
+[Linagora](https://linagora.com/) (Open Source services) – Paris, France \| 10/2009 – 06/2011
+
+- Open Source Developer in JavaScript/XUL
+- Level 3 Support and guidance to companies using Open Source regarding configuration, deployment, migrations, evolutions, bug corrections on Linux
+
+### Python integrator
+
+[Sungard](https://en.wikipedia.org/wiki/SunGard) (Banking services) – Sydney, Australia \| 12/2008 – 06/2009
+
+- Bank back-office software integration for client
+
+### Java Web developer
+
+[Apside](https://apside.com/) (Service company) – Tours, France \| 03/2007 – 09/2008
+
+- Java web applications in Java EE 5, JSF, JPA, JDBC
+- Web services with SOAP, XML/HTTP, Oracle, Hibernate, Junit
+
+## Interests
+
+- Open Source: former Arch Linux official packager (2010 – 2018)
+- Sport & nutrition
+- French Middle Age history
